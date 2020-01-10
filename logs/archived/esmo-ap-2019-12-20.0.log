@@ -1,0 +1,993 @@
+2019-12-20 13:51:55,236 INFO org.springframework.boot.StartupInfoLogger [main] Starting ApmsApplication on carlos-VirtualBox with PID 5081 (/home/carlos/Documents/prj/seal/GRAPms/target/classes started by carlos in /home/carlos/Documents/prj/seal/GRAPms)
+2019-12-20 13:51:55,249 INFO org.springframework.boot.SpringApplication [main] No active profile set, falling back to default profiles: default
+2019-12-20 13:52:06,149 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [main] Tomcat initialized with port(s): 8443 (https) 8080 (http)
+2019-12-20 13:52:06,320 INFO org.apache.juli.logging.DirectJDKLog [main] Initializing ProtocolHandler ["https-jsse-nio-8443"]
+2019-12-20 13:52:06,505 INFO org.apache.juli.logging.DirectJDKLog [main] Initializing ProtocolHandler ["http-nio-8080"]
+2019-12-20 13:52:06,571 INFO org.apache.juli.logging.DirectJDKLog [main] Starting service [Tomcat]
+2019-12-20 13:52:06,575 INFO org.apache.juli.logging.DirectJDKLog [main] Starting Servlet engine: [Apache Tomcat/9.0.16]
+2019-12-20 13:52:06,611 INFO org.apache.juli.logging.DirectJDKLog [main] The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [/usr/java/packages/lib/amd64:/usr/lib/x86_64-linux-gnu/jni:/lib/x86_64-linux-gnu:/usr/lib/x86_64-linux-gnu:/usr/lib/jni:/lib:/usr/lib]
+2019-12-20 13:52:06,912 INFO org.apache.juli.logging.DirectJDKLog [main] Initializing Spring embedded WebApplicationContext
+2019-12-20 13:52:06,915 INFO org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext [main] Root WebApplicationContext: initialization completed in 11466 ms
+2019-12-20 13:52:09,842 INFO org.opensaml.saml2.metadata.provider.AbstractReloadingMetadataProvider [main] New metadata succesfully loaded for 'https://idp.aegean.gr/idp/shibboleth'
+2019-12-20 13:52:09,870 INFO org.opensaml.saml2.metadata.provider.AbstractReloadingMetadataProvider [main] Next refresh cycle for metadata provider 'https://idp.aegean.gr/idp/shibboleth' will occur on '2019-12-20T15:52:08.663Z' ('2019-12-20T16:52:08.663+01:00' local time)
+2019-12-20 13:52:09,902 INFO esmo.test.ap.apms.SamlSecurityConfig [main] Using SAMLContextProviderLB implementation of SAMLContextProvider for context provider bean.
+2019-12-20 13:52:09,909 INFO esmo.test.ap.apms.SamlSecurityConfig [main] Setting the load balancer scheme to https
+2019-12-20 13:52:09,910 INFO esmo.test.ap.apms.SamlSecurityConfig [main] Setting the load balancer server name to serverName
+2019-12-20 13:52:09,913 INFO esmo.test.ap.apms.SamlSecurityConfig [main] Setting the load balancer context path to /grap
+2019-12-20 13:52:09,913 INFO esmo.test.ap.apms.SamlSecurityConfig [main] Setting the load balancer port to 443
+2019-12-20 13:52:09,914 INFO esmo.test.ap.apms.SamlSecurityConfig [main] Setting whether to include the server port in the request URL to false
+2019-12-20 13:52:10,311 INFO org.springframework.security.web.DefaultSecurityFilterChain [main] Creating filter chain: Ant [pattern='/saml/metadata/**'], [org.springframework.security.saml.metadata.MetadataDisplayFilter@7f67c255]
+2019-12-20 13:52:10,312 INFO org.springframework.security.web.DefaultSecurityFilterChain [main] Creating filter chain: Ant [pattern='/saml/login/**'], [esmo.test.ap.apms.SamlWithRelayStateEntryPoint@5d87e180]
+2019-12-20 13:52:10,314 INFO org.springframework.security.web.DefaultSecurityFilterChain [main] Creating filter chain: Ant [pattern='/saml/SSO/**'], [org.springframework.security.saml.SAMLProcessingFilter@adfd9]
+2019-12-20 13:52:10,314 INFO org.springframework.security.web.DefaultSecurityFilterChain [main] Creating filter chain: Ant [pattern='/saml/logout/**'], [org.springframework.security.saml.SAMLLogoutFilter@5dfca485]
+2019-12-20 13:52:10,315 INFO org.springframework.security.web.DefaultSecurityFilterChain [main] Creating filter chain: Ant [pattern='/saml/SingleLogout/**'], [org.springframework.security.saml.SAMLLogoutProcessingFilter@49d90985]
+2019-12-20 13:52:10,566 WARN org.springframework.context.support.AbstractApplicationContext [main] Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'controllers' defined in file [/home/carlos/Documents/prj/seal/GRAPms/target/classes/esmo/test/ap/apms/controllers/Controllers.class]: Bean instantiation via constructor failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [esmo.test.ap.apms.controllers.Controllers]: Constructor threw exception; nested exception is java.lang.NullPointerException
+2019-12-20 13:52:11,581 INFO org.apache.juli.logging.DirectJDKLog [main] Stopping service [Tomcat]
+2019-12-20 13:52:11,589 WARN org.apache.juli.logging.DirectJDKLog [main] The web application [ROOT] appears to have started a thread named [Timer-0] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ java.lang.Object.wait(Native Method)
+ java.util.TimerThread.mainLoop(Timer.java:552)
+ java.util.TimerThread.run(Timer.java:505)
+2019-12-20 13:52:11,622 INFO org.springframework.boot.autoconfigure.logging.ConditionEvaluationReportLoggingListener [main] 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2019-12-20 13:52:11,630 ERROR org.springframework.boot.SpringApplication [main] Application run failed
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'controllers' defined in file [/home/carlos/Documents/prj/seal/GRAPms/target/classes/esmo/test/ap/apms/controllers/Controllers.class]: Bean instantiation via constructor failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [esmo.test.ap.apms.controllers.Controllers]: Constructor threw exception; nested exception is java.lang.NullPointerException
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:304)
+	at org.springframework.beans.factory.support.ConstructorResolver.autowireConstructor(ConstructorResolver.java:285)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireConstructor(AbstractAutowireCapableBeanFactory.java:1325)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1171)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:555)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:515)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:320)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:222)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:318)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:849)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:877)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:549)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:142)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:775)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:397)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:316)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1260)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1248)
+	at esmo.test.ap.apms.ApmsApplication.main(ApmsApplication.java:10)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.boot.maven.AbstractRunMojo$LaunchRunner.run(AbstractRunMojo.java:558)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: org.springframework.beans.BeanInstantiationException: Failed to instantiate [esmo.test.ap.apms.controllers.Controllers]: Constructor threw exception; nested exception is java.lang.NullPointerException
+	at org.springframework.beans.BeanUtils.instantiateClass(BeanUtils.java:184)
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:117)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:300)
+	... 25 common frames omitted
+Caused by: java.lang.NullPointerException: null
+	at esmo.test.ap.apms.service.impl.KeyStoreServiceImpl.getSigningKey(KeyStoreServiceImpl.java:75)
+	at esmo.test.ap.apms.controllers.Controllers.<init>(Controllers.java:100)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at org.springframework.beans.BeanUtils.instantiateClass(BeanUtils.java:172)
+	... 27 common frames omitted
+2019-12-20 13:52:35,718 INFO org.springframework.boot.StartupInfoLogger [main] Starting ApmsApplication on carlos-VirtualBox with PID 5219 (/home/carlos/Documents/prj/seal/GRAPms/target/classes started by carlos in /home/carlos/Documents/prj/seal/GRAPms)
+2019-12-20 13:52:35,735 INFO org.springframework.boot.SpringApplication [main] No active profile set, falling back to default profiles: default
+2019-12-20 13:52:40,910 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [main] Tomcat initialized with port(s): 8443 (https) 8080 (http)
+2019-12-20 13:52:40,970 INFO org.apache.juli.logging.DirectJDKLog [main] Initializing ProtocolHandler ["https-jsse-nio-8443"]
+2019-12-20 13:52:41,074 INFO org.apache.juli.logging.DirectJDKLog [main] Initializing ProtocolHandler ["http-nio-8080"]
+2019-12-20 13:52:41,130 INFO org.apache.juli.logging.DirectJDKLog [main] Starting service [Tomcat]
+2019-12-20 13:52:41,134 INFO org.apache.juli.logging.DirectJDKLog [main] Starting Servlet engine: [Apache Tomcat/9.0.16]
+2019-12-20 13:52:41,197 INFO org.apache.juli.logging.DirectJDKLog [main] The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [/usr/java/packages/lib/amd64:/usr/lib/x86_64-linux-gnu/jni:/lib/x86_64-linux-gnu:/usr/lib/x86_64-linux-gnu:/usr/lib/jni:/lib:/usr/lib]
+2019-12-20 13:52:41,407 INFO org.apache.juli.logging.DirectJDKLog [main] Initializing Spring embedded WebApplicationContext
+2019-12-20 13:52:41,409 INFO org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext [main] Root WebApplicationContext: initialization completed in 5510 ms
+2019-12-20 13:52:43,613 INFO org.opensaml.saml2.metadata.provider.AbstractReloadingMetadataProvider [main] New metadata succesfully loaded for 'https://idp.aegean.gr/idp/shibboleth'
+2019-12-20 13:52:43,651 INFO org.opensaml.saml2.metadata.provider.AbstractReloadingMetadataProvider [main] Next refresh cycle for metadata provider 'https://idp.aegean.gr/idp/shibboleth' will occur on '2019-12-20T15:52:42.747Z' ('2019-12-20T16:52:42.747+01:00' local time)
+2019-12-20 13:52:43,688 INFO esmo.test.ap.apms.SamlSecurityConfig [main] Using SAMLContextProviderLB implementation of SAMLContextProvider for context provider bean.
+2019-12-20 13:52:43,697 INFO esmo.test.ap.apms.SamlSecurityConfig [main] Setting the load balancer scheme to https
+2019-12-20 13:52:43,698 INFO esmo.test.ap.apms.SamlSecurityConfig [main] Setting the load balancer server name to serverName
+2019-12-20 13:52:43,703 INFO esmo.test.ap.apms.SamlSecurityConfig [main] Setting the load balancer context path to /grap
+2019-12-20 13:52:43,705 INFO esmo.test.ap.apms.SamlSecurityConfig [main] Setting the load balancer port to 443
+2019-12-20 13:52:43,706 INFO esmo.test.ap.apms.SamlSecurityConfig [main] Setting whether to include the server port in the request URL to false
+2019-12-20 13:52:44,018 INFO org.springframework.security.web.DefaultSecurityFilterChain [main] Creating filter chain: Ant [pattern='/saml/metadata/**'], [org.springframework.security.saml.metadata.MetadataDisplayFilter@26d3ffeb]
+2019-12-20 13:52:44,019 INFO org.springframework.security.web.DefaultSecurityFilterChain [main] Creating filter chain: Ant [pattern='/saml/login/**'], [esmo.test.ap.apms.SamlWithRelayStateEntryPoint@1bc799ce]
+2019-12-20 13:52:44,020 INFO org.springframework.security.web.DefaultSecurityFilterChain [main] Creating filter chain: Ant [pattern='/saml/SSO/**'], [org.springframework.security.saml.SAMLProcessingFilter@7377c36e]
+2019-12-20 13:52:44,021 INFO org.springframework.security.web.DefaultSecurityFilterChain [main] Creating filter chain: Ant [pattern='/saml/logout/**'], [org.springframework.security.saml.SAMLLogoutFilter@621b2337]
+2019-12-20 13:52:44,022 INFO org.springframework.security.web.DefaultSecurityFilterChain [main] Creating filter chain: Ant [pattern='/saml/SingleLogout/**'], [org.springframework.security.saml.SAMLLogoutProcessingFilter@4ced0c26]
+2019-12-20 13:52:44,260 WARN org.springframework.context.support.AbstractApplicationContext [main] Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'controllers' defined in file [/home/carlos/Documents/prj/seal/GRAPms/target/classes/esmo/test/ap/apms/controllers/Controllers.class]: Bean instantiation via constructor failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [esmo.test.ap.apms.controllers.Controllers]: Constructor threw exception; nested exception is java.lang.NullPointerException
+2019-12-20 13:52:45,272 INFO org.apache.juli.logging.DirectJDKLog [main] Stopping service [Tomcat]
+2019-12-20 13:52:45,288 WARN org.apache.juli.logging.DirectJDKLog [main] The web application [ROOT] appears to have started a thread named [Timer-0] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ java.lang.Object.wait(Native Method)
+ java.util.TimerThread.mainLoop(Timer.java:552)
+ java.util.TimerThread.run(Timer.java:505)
+2019-12-20 13:52:45,340 INFO org.springframework.boot.autoconfigure.logging.ConditionEvaluationReportLoggingListener [main] 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2019-12-20 13:52:45,353 ERROR org.springframework.boot.SpringApplication [main] Application run failed
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'controllers' defined in file [/home/carlos/Documents/prj/seal/GRAPms/target/classes/esmo/test/ap/apms/controllers/Controllers.class]: Bean instantiation via constructor failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [esmo.test.ap.apms.controllers.Controllers]: Constructor threw exception; nested exception is java.lang.NullPointerException
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:304)
+	at org.springframework.beans.factory.support.ConstructorResolver.autowireConstructor(ConstructorResolver.java:285)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireConstructor(AbstractAutowireCapableBeanFactory.java:1325)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1171)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:555)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:515)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:320)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:222)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:318)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:849)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:877)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:549)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:142)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:775)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:397)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:316)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1260)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1248)
+	at esmo.test.ap.apms.ApmsApplication.main(ApmsApplication.java:10)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.boot.maven.AbstractRunMojo$LaunchRunner.run(AbstractRunMojo.java:558)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: org.springframework.beans.BeanInstantiationException: Failed to instantiate [esmo.test.ap.apms.controllers.Controllers]: Constructor threw exception; nested exception is java.lang.NullPointerException
+	at org.springframework.beans.BeanUtils.instantiateClass(BeanUtils.java:184)
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:117)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:300)
+	... 25 common frames omitted
+Caused by: java.lang.NullPointerException: null
+	at esmo.test.ap.apms.service.impl.KeyStoreServiceImpl.getSigningKey(KeyStoreServiceImpl.java:75)
+	at esmo.test.ap.apms.controllers.Controllers.<init>(Controllers.java:100)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at org.springframework.beans.BeanUtils.instantiateClass(BeanUtils.java:172)
+	... 27 common frames omitted
+2019-12-20 14:00:08,429 INFO org.springframework.boot.StartupInfoLogger [main] Starting ApmsApplication on carlos-VirtualBox with PID 5384 (/home/carlos/Documents/prj/seal/GRAPms/target/classes started by carlos in /home/carlos/Documents/prj/seal/GRAPms)
+2019-12-20 14:00:08,441 INFO org.springframework.boot.SpringApplication [main] No active profile set, falling back to default profiles: default
+2019-12-20 14:00:13,948 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [main] Tomcat initialized with port(s): 8443 (https) 8080 (http)
+2019-12-20 14:00:14,013 INFO org.apache.juli.logging.DirectJDKLog [main] Initializing ProtocolHandler ["https-jsse-nio-8443"]
+2019-12-20 14:00:14,086 INFO org.apache.juli.logging.DirectJDKLog [main] Initializing ProtocolHandler ["http-nio-8080"]
+2019-12-20 14:00:14,177 INFO org.apache.juli.logging.DirectJDKLog [main] Starting service [Tomcat]
+2019-12-20 14:00:14,180 INFO org.apache.juli.logging.DirectJDKLog [main] Starting Servlet engine: [Apache Tomcat/9.0.16]
+2019-12-20 14:00:14,236 INFO org.apache.juli.logging.DirectJDKLog [main] The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [/usr/java/packages/lib/amd64:/usr/lib/x86_64-linux-gnu/jni:/lib/x86_64-linux-gnu:/usr/lib/x86_64-linux-gnu:/usr/lib/jni:/lib:/usr/lib]
+2019-12-20 14:00:14,529 INFO org.apache.juli.logging.DirectJDKLog [main] Initializing Spring embedded WebApplicationContext
+2019-12-20 14:00:14,530 INFO org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext [main] Root WebApplicationContext: initialization completed in 5742 ms
+2019-12-20 14:00:16,837 INFO org.opensaml.saml2.metadata.provider.AbstractReloadingMetadataProvider [main] New metadata succesfully loaded for 'https://idp.aegean.gr/idp/shibboleth'
+2019-12-20 14:00:16,889 INFO org.opensaml.saml2.metadata.provider.AbstractReloadingMetadataProvider [main] Next refresh cycle for metadata provider 'https://idp.aegean.gr/idp/shibboleth' will occur on '2019-12-20T16:00:15.869Z' ('2019-12-20T17:00:15.869+01:00' local time)
+2019-12-20 14:00:16,916 INFO esmo.test.ap.apms.SamlSecurityConfig [main] Using SAMLContextProviderLB implementation of SAMLContextProvider for context provider bean.
+2019-12-20 14:00:16,926 INFO esmo.test.ap.apms.SamlSecurityConfig [main] Setting the load balancer scheme to https
+2019-12-20 14:00:16,936 INFO esmo.test.ap.apms.SamlSecurityConfig [main] Setting the load balancer server name to serverName
+2019-12-20 14:00:16,937 INFO esmo.test.ap.apms.SamlSecurityConfig [main] Setting the load balancer context path to /grap
+2019-12-20 14:00:16,938 INFO esmo.test.ap.apms.SamlSecurityConfig [main] Setting the load balancer port to 443
+2019-12-20 14:00:16,939 INFO esmo.test.ap.apms.SamlSecurityConfig [main] Setting whether to include the server port in the request URL to false
+2019-12-20 14:00:17,307 INFO org.springframework.security.web.DefaultSecurityFilterChain [main] Creating filter chain: Ant [pattern='/saml/metadata/**'], [org.springframework.security.saml.metadata.MetadataDisplayFilter@4ef8c243]
+2019-12-20 14:00:17,308 INFO org.springframework.security.web.DefaultSecurityFilterChain [main] Creating filter chain: Ant [pattern='/saml/login/**'], [esmo.test.ap.apms.SamlWithRelayStateEntryPoint@5fad794f]
+2019-12-20 14:00:17,309 INFO org.springframework.security.web.DefaultSecurityFilterChain [main] Creating filter chain: Ant [pattern='/saml/SSO/**'], [org.springframework.security.saml.SAMLProcessingFilter@6f5dfbc]
+2019-12-20 14:00:17,310 INFO org.springframework.security.web.DefaultSecurityFilterChain [main] Creating filter chain: Ant [pattern='/saml/logout/**'], [org.springframework.security.saml.SAMLLogoutFilter@c7b8577]
+2019-12-20 14:00:17,310 INFO org.springframework.security.web.DefaultSecurityFilterChain [main] Creating filter chain: Ant [pattern='/saml/SingleLogout/**'], [org.springframework.security.saml.SAMLLogoutProcessingFilter@4491156b]
+2019-12-20 14:00:17,556 WARN org.springframework.context.support.AbstractApplicationContext [main] Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'controllers' defined in file [/home/carlos/Documents/prj/seal/GRAPms/target/classes/esmo/test/ap/apms/controllers/Controllers.class]: Bean instantiation via constructor failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [esmo.test.ap.apms.controllers.Controllers]: Constructor threw exception; nested exception is java.lang.NullPointerException
+2019-12-20 14:00:18,572 INFO org.apache.juli.logging.DirectJDKLog [main] Stopping service [Tomcat]
+2019-12-20 14:00:18,595 WARN org.apache.juli.logging.DirectJDKLog [main] The web application [ROOT] appears to have started a thread named [Timer-0] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ java.lang.Object.wait(Native Method)
+ java.util.TimerThread.mainLoop(Timer.java:552)
+ java.util.TimerThread.run(Timer.java:505)
+2019-12-20 14:00:18,650 INFO org.springframework.boot.autoconfigure.logging.ConditionEvaluationReportLoggingListener [main] 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2019-12-20 14:00:18,662 ERROR org.springframework.boot.SpringApplication [main] Application run failed
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'controllers' defined in file [/home/carlos/Documents/prj/seal/GRAPms/target/classes/esmo/test/ap/apms/controllers/Controllers.class]: Bean instantiation via constructor failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [esmo.test.ap.apms.controllers.Controllers]: Constructor threw exception; nested exception is java.lang.NullPointerException
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:304)
+	at org.springframework.beans.factory.support.ConstructorResolver.autowireConstructor(ConstructorResolver.java:285)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireConstructor(AbstractAutowireCapableBeanFactory.java:1325)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1171)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:555)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:515)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:320)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:222)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:318)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:849)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:877)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:549)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:142)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:775)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:397)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:316)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1260)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1248)
+	at esmo.test.ap.apms.ApmsApplication.main(ApmsApplication.java:10)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.boot.maven.AbstractRunMojo$LaunchRunner.run(AbstractRunMojo.java:558)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: org.springframework.beans.BeanInstantiationException: Failed to instantiate [esmo.test.ap.apms.controllers.Controllers]: Constructor threw exception; nested exception is java.lang.NullPointerException
+	at org.springframework.beans.BeanUtils.instantiateClass(BeanUtils.java:184)
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:117)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:300)
+	... 25 common frames omitted
+Caused by: java.lang.NullPointerException: null
+	at esmo.test.ap.apms.service.impl.KeyStoreServiceImpl.getSigningKey(KeyStoreServiceImpl.java:75)
+	at esmo.test.ap.apms.controllers.Controllers.<init>(Controllers.java:100)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at org.springframework.beans.BeanUtils.instantiateClass(BeanUtils.java:172)
+	... 27 common frames omitted
+2019-12-20 14:02:58,259 INFO org.springframework.boot.StartupInfoLogger [main] Starting ApmsApplication on carlos-VirtualBox with PID 5511 (/home/carlos/Documents/prj/seal/GRAPms/target/classes started by carlos in /home/carlos/Documents/prj/seal/GRAPms)
+2019-12-20 14:02:58,288 INFO org.springframework.boot.SpringApplication [main] No active profile set, falling back to default profiles: default
+2019-12-20 14:03:05,589 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [main] Tomcat initialized with port(s): 8443 (https) 8080 (http)
+2019-12-20 14:03:05,649 INFO org.apache.juli.logging.DirectJDKLog [main] Initializing ProtocolHandler ["https-jsse-nio-8443"]
+2019-12-20 14:03:05,690 INFO org.apache.juli.logging.DirectJDKLog [main] Initializing ProtocolHandler ["http-nio-8080"]
+2019-12-20 14:03:05,725 INFO org.apache.juli.logging.DirectJDKLog [main] Starting service [Tomcat]
+2019-12-20 14:03:05,727 INFO org.apache.juli.logging.DirectJDKLog [main] Starting Servlet engine: [Apache Tomcat/9.0.16]
+2019-12-20 14:03:05,765 INFO org.apache.juli.logging.DirectJDKLog [main] The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [/usr/java/packages/lib/amd64:/usr/lib/x86_64-linux-gnu/jni:/lib/x86_64-linux-gnu:/usr/lib/x86_64-linux-gnu:/usr/lib/jni:/lib:/usr/lib]
+2019-12-20 14:03:06,106 INFO org.apache.juli.logging.DirectJDKLog [main] Initializing Spring embedded WebApplicationContext
+2019-12-20 14:03:06,107 INFO org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext [main] Root WebApplicationContext: initialization completed in 7665 ms
+2019-12-20 14:03:10,267 INFO org.opensaml.saml2.metadata.provider.AbstractReloadingMetadataProvider [main] New metadata succesfully loaded for 'https://idp.aegean.gr/idp/shibboleth'
+2019-12-20 14:03:10,337 INFO org.opensaml.saml2.metadata.provider.AbstractReloadingMetadataProvider [main] Next refresh cycle for metadata provider 'https://idp.aegean.gr/idp/shibboleth' will occur on '2019-12-20T16:03:08.739Z' ('2019-12-20T17:03:08.739+01:00' local time)
+2019-12-20 14:03:10,373 INFO esmo.test.ap.apms.SamlSecurityConfig [main] Using SAMLContextProviderLB implementation of SAMLContextProvider for context provider bean.
+2019-12-20 14:03:10,392 INFO esmo.test.ap.apms.SamlSecurityConfig [main] Setting the load balancer scheme to https
+2019-12-20 14:03:10,393 INFO esmo.test.ap.apms.SamlSecurityConfig [main] Setting the load balancer server name to serverName
+2019-12-20 14:03:10,396 INFO esmo.test.ap.apms.SamlSecurityConfig [main] Setting the load balancer context path to /grap
+2019-12-20 14:03:10,398 INFO esmo.test.ap.apms.SamlSecurityConfig [main] Setting the load balancer port to 443
+2019-12-20 14:03:10,399 INFO esmo.test.ap.apms.SamlSecurityConfig [main] Setting whether to include the server port in the request URL to false
+2019-12-20 14:03:10,953 INFO org.springframework.security.web.DefaultSecurityFilterChain [main] Creating filter chain: Ant [pattern='/saml/metadata/**'], [org.springframework.security.saml.metadata.MetadataDisplayFilter@1d8b4ee6]
+2019-12-20 14:03:10,955 INFO org.springframework.security.web.DefaultSecurityFilterChain [main] Creating filter chain: Ant [pattern='/saml/login/**'], [esmo.test.ap.apms.SamlWithRelayStateEntryPoint@12a24a21]
+2019-12-20 14:03:10,957 INFO org.springframework.security.web.DefaultSecurityFilterChain [main] Creating filter chain: Ant [pattern='/saml/SSO/**'], [org.springframework.security.saml.SAMLProcessingFilter@757cab22]
+2019-12-20 14:03:10,959 INFO org.springframework.security.web.DefaultSecurityFilterChain [main] Creating filter chain: Ant [pattern='/saml/logout/**'], [org.springframework.security.saml.SAMLLogoutFilter@2035e907]
+2019-12-20 14:03:10,969 INFO org.springframework.security.web.DefaultSecurityFilterChain [main] Creating filter chain: Ant [pattern='/saml/SingleLogout/**'], [org.springframework.security.saml.SAMLLogoutProcessingFilter@702bd874]
+2019-12-20 14:03:11,431 WARN org.springframework.context.support.AbstractApplicationContext [main] Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'controllers' defined in file [/home/carlos/Documents/prj/seal/GRAPms/target/classes/esmo/test/ap/apms/controllers/Controllers.class]: Bean instantiation via constructor failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [esmo.test.ap.apms.controllers.Controllers]: Constructor threw exception; nested exception is java.lang.NullPointerException
+2019-12-20 14:03:12,441 INFO org.apache.juli.logging.DirectJDKLog [main] Stopping service [Tomcat]
+2019-12-20 14:03:12,457 WARN org.apache.juli.logging.DirectJDKLog [main] The web application [ROOT] appears to have started a thread named [Timer-0] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ java.lang.Object.wait(Native Method)
+ java.util.TimerThread.mainLoop(Timer.java:552)
+ java.util.TimerThread.run(Timer.java:505)
+2019-12-20 14:03:12,514 INFO org.springframework.boot.autoconfigure.logging.ConditionEvaluationReportLoggingListener [main] 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2019-12-20 14:03:12,548 ERROR org.springframework.boot.SpringApplication [main] Application run failed
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'controllers' defined in file [/home/carlos/Documents/prj/seal/GRAPms/target/classes/esmo/test/ap/apms/controllers/Controllers.class]: Bean instantiation via constructor failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [esmo.test.ap.apms.controllers.Controllers]: Constructor threw exception; nested exception is java.lang.NullPointerException
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:304)
+	at org.springframework.beans.factory.support.ConstructorResolver.autowireConstructor(ConstructorResolver.java:285)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireConstructor(AbstractAutowireCapableBeanFactory.java:1325)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1171)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:555)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:515)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:320)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:222)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:318)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:849)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:877)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:549)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:142)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:775)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:397)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:316)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1260)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1248)
+	at esmo.test.ap.apms.ApmsApplication.main(ApmsApplication.java:10)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.boot.maven.AbstractRunMojo$LaunchRunner.run(AbstractRunMojo.java:558)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: org.springframework.beans.BeanInstantiationException: Failed to instantiate [esmo.test.ap.apms.controllers.Controllers]: Constructor threw exception; nested exception is java.lang.NullPointerException
+	at org.springframework.beans.BeanUtils.instantiateClass(BeanUtils.java:184)
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:117)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:300)
+	... 25 common frames omitted
+Caused by: java.lang.NullPointerException: null
+	at esmo.test.ap.apms.service.impl.KeyStoreServiceImpl.getSigningKey(KeyStoreServiceImpl.java:75)
+	at esmo.test.ap.apms.controllers.Controllers.<init>(Controllers.java:100)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at org.springframework.beans.BeanUtils.instantiateClass(BeanUtils.java:172)
+	... 27 common frames omitted
+2019-12-20 14:05:43,853 INFO org.springframework.boot.StartupInfoLogger [main] Starting ApmsApplication on carlos-VirtualBox with PID 5713 (/home/carlos/Documents/prj/seal/GRAPms/target/classes started by carlos in /home/carlos/Documents/prj/seal/GRAPms)
+2019-12-20 14:05:43,861 INFO org.springframework.boot.SpringApplication [main] No active profile set, falling back to default profiles: default
+2019-12-20 14:05:47,787 INFO org.springframework.boot.StartupInfoLogger [main] Starting ApmsApplication on carlos-VirtualBox with PID 5672 (/home/carlos/Documents/prj/seal/GRAPms/target/classes started by carlos in /home/carlos/Documents/prj/seal/GRAPms)
+2019-12-20 14:05:47,793 INFO org.springframework.boot.SpringApplication [main] No active profile set, falling back to default profiles: default
+2019-12-20 14:05:53,061 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [main] Tomcat initialized with port(s): 8443 (https) 8080 (http)
+2019-12-20 14:05:53,163 INFO org.apache.juli.logging.DirectJDKLog [main] Initializing ProtocolHandler ["https-jsse-nio-8443"]
+2019-12-20 14:05:53,206 INFO org.apache.juli.logging.DirectJDKLog [main] Initializing ProtocolHandler ["http-nio-8080"]
+2019-12-20 14:05:53,256 INFO org.apache.juli.logging.DirectJDKLog [main] Starting service [Tomcat]
+2019-12-20 14:05:53,257 INFO org.apache.juli.logging.DirectJDKLog [main] Starting Servlet engine: [Apache Tomcat/9.0.16]
+2019-12-20 14:05:53,274 INFO org.apache.juli.logging.DirectJDKLog [main] The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [/usr/java/packages/lib/amd64:/usr/lib/x86_64-linux-gnu/jni:/lib/x86_64-linux-gnu:/usr/lib/x86_64-linux-gnu:/usr/lib/jni:/lib:/usr/lib]
+2019-12-20 14:05:53,701 INFO org.apache.juli.logging.DirectJDKLog [main] Initializing Spring embedded WebApplicationContext
+2019-12-20 14:05:53,702 INFO org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext [main] Root WebApplicationContext: initialization completed in 9616 ms
+2019-12-20 14:05:56,450 INFO org.opensaml.saml2.metadata.provider.AbstractReloadingMetadataProvider [main] New metadata succesfully loaded for 'https://idp.aegean.gr/idp/shibboleth'
+2019-12-20 14:05:56,540 INFO org.opensaml.saml2.metadata.provider.AbstractReloadingMetadataProvider [main] Next refresh cycle for metadata provider 'https://idp.aegean.gr/idp/shibboleth' will occur on '2019-12-20T16:05:55.107Z' ('2019-12-20T17:05:55.107+01:00' local time)
+2019-12-20 14:05:56,967 INFO esmo.test.ap.apms.SamlSecurityConfig [main] Using SAMLContextProviderLB implementation of SAMLContextProvider for context provider bean.
+2019-12-20 14:05:56,982 INFO esmo.test.ap.apms.SamlSecurityConfig [main] Setting the load balancer scheme to https
+2019-12-20 14:05:57,011 INFO esmo.test.ap.apms.SamlSecurityConfig [main] Setting the load balancer server name to serverName
+2019-12-20 14:05:57,012 INFO esmo.test.ap.apms.SamlSecurityConfig [main] Setting the load balancer context path to /grap
+2019-12-20 14:05:57,013 INFO esmo.test.ap.apms.SamlSecurityConfig [main] Setting the load balancer port to 443
+2019-12-20 14:05:57,016 INFO esmo.test.ap.apms.SamlSecurityConfig [main] Setting whether to include the server port in the request URL to false
+2019-12-20 14:05:57,797 INFO org.springframework.security.web.DefaultSecurityFilterChain [main] Creating filter chain: Ant [pattern='/saml/metadata/**'], [org.springframework.security.saml.metadata.MetadataDisplayFilter@2daf06fc]
+2019-12-20 14:05:57,798 INFO org.springframework.security.web.DefaultSecurityFilterChain [main] Creating filter chain: Ant [pattern='/saml/login/**'], [esmo.test.ap.apms.SamlWithRelayStateEntryPoint@ba17be6]
+2019-12-20 14:05:57,799 INFO org.springframework.security.web.DefaultSecurityFilterChain [main] Creating filter chain: Ant [pattern='/saml/SSO/**'], [org.springframework.security.saml.SAMLProcessingFilter@34d45ec0]
+2019-12-20 14:05:57,800 INFO org.springframework.security.web.DefaultSecurityFilterChain [main] Creating filter chain: Ant [pattern='/saml/logout/**'], [org.springframework.security.saml.SAMLLogoutFilter@6bccd036]
+2019-12-20 14:05:57,805 INFO org.springframework.security.web.DefaultSecurityFilterChain [main] Creating filter chain: Ant [pattern='/saml/SingleLogout/**'], [org.springframework.security.saml.SAMLLogoutProcessingFilter@6b63e6ad]
+2019-12-20 14:05:58,010 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [main] Tomcat initialized with port(s): 8443 (https) 8080 (http)
+2019-12-20 14:05:58,094 INFO org.apache.juli.logging.DirectJDKLog [main] Initializing ProtocolHandler ["https-jsse-nio-8443"]
+2019-12-20 14:05:58,193 INFO org.apache.juli.logging.DirectJDKLog [main] Initializing ProtocolHandler ["http-nio-8080"]
+2019-12-20 14:05:58,237 WARN org.springframework.context.support.AbstractApplicationContext [main] Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'controllers' defined in file [/home/carlos/Documents/prj/seal/GRAPms/target/classes/esmo/test/ap/apms/controllers/Controllers.class]: Unsatisfied dependency expressed through constructor parameter 1; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'keyStoreServiceImpl' defined in file [/home/carlos/Documents/prj/seal/GRAPms/target/classes/esmo/test/ap/apms/service/impl/KeyStoreServiceImpl.class]: Bean instantiation via constructor failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [esmo.test.ap.apms.service.impl.KeyStoreServiceImpl]: Constructor threw exception; nested exception is java.lang.NullPointerException
+2019-12-20 14:05:58,285 ERROR org.apache.juli.logging.DirectJDKLog [main] Failed to initialize component [Connector[HTTP/1.1-8080]]
+org.apache.catalina.LifecycleException: Protocol handler initialization failed
+	at org.apache.catalina.connector.Connector.initInternal(Connector.java:983)
+	at org.apache.catalina.util.LifecycleBase.init(LifecycleBase.java:136)
+	at org.apache.catalina.core.StandardService.initInternal(StandardService.java:535)
+	at org.apache.catalina.util.LifecycleBase.init(LifecycleBase.java:136)
+	at org.apache.catalina.core.StandardServer.initInternal(StandardServer.java:1055)
+	at org.apache.catalina.util.LifecycleBase.init(LifecycleBase.java:136)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:173)
+	at org.apache.catalina.startup.Tomcat.start(Tomcat.java:455)
+	at org.springframework.boot.web.embedded.tomcat.TomcatWebServer.initialize(TomcatWebServer.java:106)
+	at org.springframework.boot.web.embedded.tomcat.TomcatWebServer.<init>(TomcatWebServer.java:86)
+	at org.springframework.boot.web.embedded.tomcat.TomcatServletWebServerFactory.getTomcatWebServer(TomcatServletWebServerFactory.java:415)
+	at org.springframework.boot.web.embedded.tomcat.TomcatServletWebServerFactory.getWebServer(TomcatServletWebServerFactory.java:174)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.createWebServer(ServletWebServerApplicationContext.java:181)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.onRefresh(ServletWebServerApplicationContext.java:154)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:543)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:142)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:775)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:397)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:316)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1260)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1248)
+	at esmo.test.ap.apms.ApmsApplication.main(ApmsApplication.java:10)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.boot.maven.AbstractRunMojo$LaunchRunner.run(AbstractRunMojo.java:558)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: java.net.BindException: Address already in use
+	at sun.nio.ch.Net.bind0(Native Method)
+	at sun.nio.ch.Net.bind(Net.java:433)
+	at sun.nio.ch.Net.bind(Net.java:425)
+	at sun.nio.ch.ServerSocketChannelImpl.bind(ServerSocketChannelImpl.java:223)
+	at sun.nio.ch.ServerSocketAdaptor.bind(ServerSocketAdaptor.java:74)
+	at org.apache.tomcat.util.net.NioEndpoint.initServerSocket(NioEndpoint.java:236)
+	at org.apache.tomcat.util.net.NioEndpoint.bind(NioEndpoint.java:210)
+	at org.apache.tomcat.util.net.AbstractEndpoint.bindWithCleanup(AbstractEndpoint.java:1085)
+	at org.apache.tomcat.util.net.AbstractEndpoint.init(AbstractEndpoint.java:1098)
+	at org.apache.coyote.AbstractProtocol.init(AbstractProtocol.java:557)
+	at org.apache.coyote.http11.AbstractHttp11Protocol.init(AbstractHttp11Protocol.java:74)
+	at org.apache.catalina.connector.Connector.initInternal(Connector.java:980)
+	... 27 common frames omitted
+2019-12-20 14:05:58,296 INFO org.apache.juli.logging.DirectJDKLog [main] Starting service [Tomcat]
+2019-12-20 14:05:58,300 INFO org.apache.juli.logging.DirectJDKLog [main] Starting Servlet engine: [Apache Tomcat/9.0.16]
+2019-12-20 14:05:58,379 INFO org.apache.juli.logging.DirectJDKLog [main] The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [/usr/java/packages/lib/amd64:/usr/lib/x86_64-linux-gnu/jni:/lib/x86_64-linux-gnu:/usr/lib/x86_64-linux-gnu:/usr/lib/jni:/lib:/usr/lib]
+2019-12-20 14:05:58,769 INFO org.apache.juli.logging.DirectJDKLog [main] Initializing Spring embedded WebApplicationContext
+2019-12-20 14:05:58,770 INFO org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext [main] Root WebApplicationContext: initialization completed in 10784 ms
+2019-12-20 14:05:59,187 INFO esmo.test.ap.apms.SamlSecurityConfig [main] Using SAMLContextProviderLB implementation of SAMLContextProvider for context provider bean.
+2019-12-20 14:05:59,213 INFO esmo.test.ap.apms.SamlSecurityConfig [main] Setting the load balancer scheme to https
+2019-12-20 14:05:59,219 INFO esmo.test.ap.apms.SamlSecurityConfig [main] Setting the load balancer server name to serverName
+2019-12-20 14:05:59,221 INFO esmo.test.ap.apms.SamlSecurityConfig [main] Setting the load balancer context path to /grap
+2019-12-20 14:05:59,235 INFO esmo.test.ap.apms.SamlSecurityConfig [main] Setting the load balancer port to 443
+2019-12-20 14:05:59,236 INFO esmo.test.ap.apms.SamlSecurityConfig [main] Setting whether to include the server port in the request URL to false
+2019-12-20 14:05:59,248 INFO org.apache.juli.logging.DirectJDKLog [main] Stopping service [Tomcat]
+2019-12-20 14:05:59,265 WARN org.apache.juli.logging.DirectJDKLog [main] The web application [ROOT] appears to have started a thread named [Timer-0] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ java.lang.Object.wait(Native Method)
+ java.util.TimerThread.mainLoop(Timer.java:552)
+ java.util.TimerThread.run(Timer.java:505)
+2019-12-20 14:05:59,357 INFO org.springframework.boot.autoconfigure.logging.ConditionEvaluationReportLoggingListener [main] 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2019-12-20 14:05:59,393 ERROR org.springframework.boot.SpringApplication [main] Application run failed
+org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'controllers' defined in file [/home/carlos/Documents/prj/seal/GRAPms/target/classes/esmo/test/ap/apms/controllers/Controllers.class]: Unsatisfied dependency expressed through constructor parameter 1; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'keyStoreServiceImpl' defined in file [/home/carlos/Documents/prj/seal/GRAPms/target/classes/esmo/test/ap/apms/service/impl/KeyStoreServiceImpl.class]: Bean instantiation via constructor failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [esmo.test.ap.apms.service.impl.KeyStoreServiceImpl]: Constructor threw exception; nested exception is java.lang.NullPointerException
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:769)
+	at org.springframework.beans.factory.support.ConstructorResolver.autowireConstructor(ConstructorResolver.java:218)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireConstructor(AbstractAutowireCapableBeanFactory.java:1325)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1171)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:555)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:515)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:320)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:222)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:318)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:849)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:877)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:549)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:142)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:775)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:397)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:316)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1260)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1248)
+	at esmo.test.ap.apms.ApmsApplication.main(ApmsApplication.java:10)
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'keyStoreServiceImpl' defined in file [/home/carlos/Documents/prj/seal/GRAPms/target/classes/esmo/test/ap/apms/service/impl/KeyStoreServiceImpl.class]: Bean instantiation via constructor failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [esmo.test.ap.apms.service.impl.KeyStoreServiceImpl]: Constructor threw exception; nested exception is java.lang.NullPointerException
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:304)
+	at org.springframework.beans.factory.support.ConstructorResolver.autowireConstructor(ConstructorResolver.java:285)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireConstructor(AbstractAutowireCapableBeanFactory.java:1325)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1171)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:555)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:515)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:320)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:222)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:318)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199)
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:277)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1247)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1167)
+	at org.springframework.beans.factory.support.ConstructorResolver.resolveAutowiredArgument(ConstructorResolver.java:857)
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:760)
+	... 19 common frames omitted
+Caused by: org.springframework.beans.BeanInstantiationException: Failed to instantiate [esmo.test.ap.apms.service.impl.KeyStoreServiceImpl]: Constructor threw exception; nested exception is java.lang.NullPointerException
+	at org.springframework.beans.BeanUtils.instantiateClass(BeanUtils.java:184)
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:117)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:300)
+	... 33 common frames omitted
+Caused by: java.lang.NullPointerException: null
+	at esmo.test.ap.apms.service.impl.KeyStoreServiceImpl.<init>(KeyStoreServiceImpl.java:59)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at org.springframework.beans.BeanUtils.instantiateClass(BeanUtils.java:172)
+	... 35 common frames omitted
+2019-12-20 14:06:01,420 INFO org.opensaml.saml2.metadata.provider.AbstractReloadingMetadataProvider [main] New metadata succesfully loaded for 'https://idp.aegean.gr/idp/shibboleth'
+2019-12-20 14:06:01,448 INFO org.opensaml.saml2.metadata.provider.AbstractReloadingMetadataProvider [main] Next refresh cycle for metadata provider 'https://idp.aegean.gr/idp/shibboleth' will occur on '2019-12-20T16:06:00.103Z' ('2019-12-20T17:06:00.103+01:00' local time)
+2019-12-20 14:06:01,925 INFO org.springframework.security.web.DefaultSecurityFilterChain [main] Creating filter chain: Ant [pattern='/saml/metadata/**'], [org.springframework.security.saml.metadata.MetadataDisplayFilter@38a1b950]
+2019-12-20 14:06:01,927 INFO org.springframework.security.web.DefaultSecurityFilterChain [main] Creating filter chain: Ant [pattern='/saml/login/**'], [esmo.test.ap.apms.SamlWithRelayStateEntryPoint@651b935e]
+2019-12-20 14:06:01,928 INFO org.springframework.security.web.DefaultSecurityFilterChain [main] Creating filter chain: Ant [pattern='/saml/SSO/**'], [org.springframework.security.saml.SAMLProcessingFilter@45653176]
+2019-12-20 14:06:01,934 INFO org.springframework.security.web.DefaultSecurityFilterChain [main] Creating filter chain: Ant [pattern='/saml/logout/**'], [org.springframework.security.saml.SAMLLogoutFilter@1eb2c44d]
+2019-12-20 14:06:01,935 INFO org.springframework.security.web.DefaultSecurityFilterChain [main] Creating filter chain: Ant [pattern='/saml/SingleLogout/**'], [org.springframework.security.saml.SAMLLogoutProcessingFilter@71db9a86]
+2019-12-20 14:06:02,279 WARN org.springframework.context.support.AbstractApplicationContext [main] Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'controllers' defined in file [/home/carlos/Documents/prj/seal/GRAPms/target/classes/esmo/test/ap/apms/controllers/Controllers.class]: Bean instantiation via constructor failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [esmo.test.ap.apms.controllers.Controllers]: Constructor threw exception; nested exception is java.lang.NullPointerException
+2019-12-20 14:06:03,307 INFO org.apache.juli.logging.DirectJDKLog [main] Stopping service [Tomcat]
+2019-12-20 14:06:03,344 WARN org.apache.juli.logging.DirectJDKLog [main] The web application [ROOT] appears to have started a thread named [Timer-0] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ java.lang.Object.wait(Native Method)
+ java.util.TimerThread.mainLoop(Timer.java:552)
+ java.util.TimerThread.run(Timer.java:505)
+2019-12-20 14:06:03,382 INFO org.springframework.boot.autoconfigure.logging.ConditionEvaluationReportLoggingListener [main] 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2019-12-20 14:06:03,386 ERROR org.springframework.boot.SpringApplication [main] Application run failed
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'controllers' defined in file [/home/carlos/Documents/prj/seal/GRAPms/target/classes/esmo/test/ap/apms/controllers/Controllers.class]: Bean instantiation via constructor failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [esmo.test.ap.apms.controllers.Controllers]: Constructor threw exception; nested exception is java.lang.NullPointerException
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:304)
+	at org.springframework.beans.factory.support.ConstructorResolver.autowireConstructor(ConstructorResolver.java:285)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireConstructor(AbstractAutowireCapableBeanFactory.java:1325)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1171)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:555)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:515)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:320)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:222)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:318)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:849)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:877)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:549)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:142)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:775)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:397)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:316)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1260)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1248)
+	at esmo.test.ap.apms.ApmsApplication.main(ApmsApplication.java:10)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.boot.maven.AbstractRunMojo$LaunchRunner.run(AbstractRunMojo.java:558)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: org.springframework.beans.BeanInstantiationException: Failed to instantiate [esmo.test.ap.apms.controllers.Controllers]: Constructor threw exception; nested exception is java.lang.NullPointerException
+	at org.springframework.beans.BeanUtils.instantiateClass(BeanUtils.java:184)
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:117)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:300)
+	... 25 common frames omitted
+Caused by: java.lang.NullPointerException: null
+	at esmo.test.ap.apms.service.impl.KeyStoreServiceImpl.getSigningKey(KeyStoreServiceImpl.java:75)
+	at esmo.test.ap.apms.controllers.Controllers.<init>(Controllers.java:100)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at org.springframework.beans.BeanUtils.instantiateClass(BeanUtils.java:172)
+	... 27 common frames omitted
+2019-12-20 14:06:32,691 INFO org.springframework.boot.StartupInfoLogger [main] Starting ApmsApplication on carlos-VirtualBox with PID 5810 (/home/carlos/Documents/prj/seal/GRAPms/target/classes started by carlos in /home/carlos/Documents/prj/seal/GRAPms)
+2019-12-20 14:06:32,720 INFO org.springframework.boot.SpringApplication [main] No active profile set, falling back to default profiles: default
+2019-12-20 14:06:38,406 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [main] Tomcat initialized with port(s): 8443 (https) 8080 (http)
+2019-12-20 14:06:38,462 INFO org.apache.juli.logging.DirectJDKLog [main] Initializing ProtocolHandler ["https-jsse-nio-8443"]
+2019-12-20 14:06:38,555 INFO org.apache.juli.logging.DirectJDKLog [main] Initializing ProtocolHandler ["http-nio-8080"]
+2019-12-20 14:06:38,584 INFO org.apache.juli.logging.DirectJDKLog [main] Starting service [Tomcat]
+2019-12-20 14:06:38,591 INFO org.apache.juli.logging.DirectJDKLog [main] Starting Servlet engine: [Apache Tomcat/9.0.16]
+2019-12-20 14:06:38,627 INFO org.apache.juli.logging.DirectJDKLog [main] The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [/usr/java/packages/lib/amd64:/usr/lib/x86_64-linux-gnu/jni:/lib/x86_64-linux-gnu:/usr/lib/x86_64-linux-gnu:/usr/lib/jni:/lib:/usr/lib]
+2019-12-20 14:06:38,816 INFO org.apache.juli.logging.DirectJDKLog [main] Initializing Spring embedded WebApplicationContext
+2019-12-20 14:06:38,816 INFO org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext [main] Root WebApplicationContext: initialization completed in 5944 ms
+2019-12-20 14:06:40,395 INFO org.opensaml.saml2.metadata.provider.AbstractReloadingMetadataProvider [main] New metadata succesfully loaded for 'https://idp.aegean.gr/idp/shibboleth'
+2019-12-20 14:06:40,423 INFO org.opensaml.saml2.metadata.provider.AbstractReloadingMetadataProvider [main] Next refresh cycle for metadata provider 'https://idp.aegean.gr/idp/shibboleth' will occur on '2019-12-20T16:06:39.573Z' ('2019-12-20T17:06:39.573+01:00' local time)
+2019-12-20 14:06:40,444 INFO esmo.test.ap.apms.SamlSecurityConfig [main] Using SAMLContextProviderLB implementation of SAMLContextProvider for context provider bean.
+2019-12-20 14:06:40,466 INFO esmo.test.ap.apms.SamlSecurityConfig [main] Setting the load balancer scheme to https
+2019-12-20 14:06:40,468 INFO esmo.test.ap.apms.SamlSecurityConfig [main] Setting the load balancer server name to serverName
+2019-12-20 14:06:40,470 INFO esmo.test.ap.apms.SamlSecurityConfig [main] Setting the load balancer context path to /grap
+2019-12-20 14:06:40,472 INFO esmo.test.ap.apms.SamlSecurityConfig [main] Setting the load balancer port to 443
+2019-12-20 14:06:40,474 INFO esmo.test.ap.apms.SamlSecurityConfig [main] Setting whether to include the server port in the request URL to false
+2019-12-20 14:06:40,768 INFO org.springframework.security.web.DefaultSecurityFilterChain [main] Creating filter chain: Ant [pattern='/saml/metadata/**'], [org.springframework.security.saml.metadata.MetadataDisplayFilter@6d52f2ba]
+2019-12-20 14:06:40,769 INFO org.springframework.security.web.DefaultSecurityFilterChain [main] Creating filter chain: Ant [pattern='/saml/login/**'], [esmo.test.ap.apms.SamlWithRelayStateEntryPoint@7267bac3]
+2019-12-20 14:06:40,770 INFO org.springframework.security.web.DefaultSecurityFilterChain [main] Creating filter chain: Ant [pattern='/saml/SSO/**'], [org.springframework.security.saml.SAMLProcessingFilter@3b1cc16]
+2019-12-20 14:06:40,771 INFO org.springframework.security.web.DefaultSecurityFilterChain [main] Creating filter chain: Ant [pattern='/saml/logout/**'], [org.springframework.security.saml.SAMLLogoutFilter@4ccf0f0f]
+2019-12-20 14:06:40,772 INFO org.springframework.security.web.DefaultSecurityFilterChain [main] Creating filter chain: Ant [pattern='/saml/SingleLogout/**'], [org.springframework.security.saml.SAMLLogoutProcessingFilter@35176a78]
+2019-12-20 14:06:40,926 WARN org.springframework.context.support.AbstractApplicationContext [main] Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'samlControllers' defined in file [/home/carlos/Documents/prj/seal/GRAPms/target/classes/esmo/test/ap/apms/controllers/SamlControllers.class]: Bean instantiation via constructor failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [esmo.test.ap.apms.controllers.SamlControllers]: Constructor threw exception; nested exception is java.lang.NullPointerException
+2019-12-20 14:06:41,937 INFO org.apache.juli.logging.DirectJDKLog [main] Stopping service [Tomcat]
+2019-12-20 14:06:41,954 WARN org.apache.juli.logging.DirectJDKLog [main] The web application [ROOT] appears to have started a thread named [Timer-0] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ java.lang.Object.wait(Native Method)
+ java.util.TimerThread.mainLoop(Timer.java:552)
+ java.util.TimerThread.run(Timer.java:505)
+2019-12-20 14:06:42,013 INFO org.springframework.boot.autoconfigure.logging.ConditionEvaluationReportLoggingListener [main] 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2019-12-20 14:06:42,019 ERROR org.springframework.boot.SpringApplication [main] Application run failed
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'samlControllers' defined in file [/home/carlos/Documents/prj/seal/GRAPms/target/classes/esmo/test/ap/apms/controllers/SamlControllers.class]: Bean instantiation via constructor failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [esmo.test.ap.apms.controllers.SamlControllers]: Constructor threw exception; nested exception is java.lang.NullPointerException
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:304)
+	at org.springframework.beans.factory.support.ConstructorResolver.autowireConstructor(ConstructorResolver.java:285)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireConstructor(AbstractAutowireCapableBeanFactory.java:1325)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1171)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:555)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:515)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:320)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:222)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:318)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:849)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:877)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:549)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:142)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:775)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:397)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:316)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1260)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1248)
+	at esmo.test.ap.apms.ApmsApplication.main(ApmsApplication.java:10)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.boot.maven.AbstractRunMojo$LaunchRunner.run(AbstractRunMojo.java:558)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: org.springframework.beans.BeanInstantiationException: Failed to instantiate [esmo.test.ap.apms.controllers.SamlControllers]: Constructor threw exception; nested exception is java.lang.NullPointerException
+	at org.springframework.beans.BeanUtils.instantiateClass(BeanUtils.java:184)
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:117)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:300)
+	... 25 common frames omitted
+Caused by: java.lang.NullPointerException: null
+	at esmo.test.ap.apms.service.impl.KeyStoreServiceImpl.getSigningKey(KeyStoreServiceImpl.java:75)
+	at esmo.test.ap.apms.controllers.SamlControllers.<init>(SamlControllers.java:82)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at org.springframework.beans.BeanUtils.instantiateClass(BeanUtils.java:172)
+	... 27 common frames omitted
+2019-12-20 14:07:19,907 INFO org.springframework.boot.StartupInfoLogger [main] Starting ApmsApplication on carlos-VirtualBox with PID 5878 (/home/carlos/Documents/prj/seal/GRAPms/target/classes started by carlos in /home/carlos/Documents/prj/seal/GRAPms)
+2019-12-20 14:07:19,916 INFO org.springframework.boot.SpringApplication [main] No active profile set, falling back to default profiles: default
+2019-12-20 14:07:27,110 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [main] Tomcat initialized with port(s): 8443 (https) 8080 (http)
+2019-12-20 14:07:27,175 INFO org.apache.juli.logging.DirectJDKLog [main] Initializing ProtocolHandler ["https-jsse-nio-8443"]
+2019-12-20 14:07:27,285 INFO org.apache.juli.logging.DirectJDKLog [main] Initializing ProtocolHandler ["http-nio-8080"]
+2019-12-20 14:07:27,332 INFO org.apache.juli.logging.DirectJDKLog [main] Starting service [Tomcat]
+2019-12-20 14:07:27,336 INFO org.apache.juli.logging.DirectJDKLog [main] Starting Servlet engine: [Apache Tomcat/9.0.16]
+2019-12-20 14:07:27,382 INFO org.apache.juli.logging.DirectJDKLog [main] The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [/usr/java/packages/lib/amd64:/usr/lib/x86_64-linux-gnu/jni:/lib/x86_64-linux-gnu:/usr/lib/x86_64-linux-gnu:/usr/lib/jni:/lib:/usr/lib]
+2019-12-20 14:07:27,631 INFO org.apache.juli.logging.DirectJDKLog [main] Initializing Spring embedded WebApplicationContext
+2019-12-20 14:07:27,633 INFO org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext [main] Root WebApplicationContext: initialization completed in 7379 ms
+2019-12-20 14:07:31,099 INFO org.opensaml.saml2.metadata.provider.AbstractReloadingMetadataProvider [main] New metadata succesfully loaded for 'https://idp.aegean.gr/idp/shibboleth'
+2019-12-20 14:07:31,234 INFO org.opensaml.saml2.metadata.provider.AbstractReloadingMetadataProvider [main] Next refresh cycle for metadata provider 'https://idp.aegean.gr/idp/shibboleth' will occur on '2019-12-20T16:07:29.450Z' ('2019-12-20T17:07:29.450+01:00' local time)
+2019-12-20 14:07:31,398 INFO esmo.test.ap.apms.SamlSecurityConfig [main] Using SAMLContextProviderLB implementation of SAMLContextProvider for context provider bean.
+2019-12-20 14:07:31,417 INFO esmo.test.ap.apms.SamlSecurityConfig [main] Setting the load balancer scheme to https
+2019-12-20 14:07:31,420 INFO esmo.test.ap.apms.SamlSecurityConfig [main] Setting the load balancer server name to serverName
+2019-12-20 14:07:31,423 INFO esmo.test.ap.apms.SamlSecurityConfig [main] Setting the load balancer context path to /grap
+2019-12-20 14:07:31,449 INFO esmo.test.ap.apms.SamlSecurityConfig [main] Setting the load balancer port to 443
+2019-12-20 14:07:31,450 INFO esmo.test.ap.apms.SamlSecurityConfig [main] Setting whether to include the server port in the request URL to false
+2019-12-20 14:07:32,088 INFO org.springframework.security.web.DefaultSecurityFilterChain [main] Creating filter chain: Ant [pattern='/saml/metadata/**'], [org.springframework.security.saml.metadata.MetadataDisplayFilter@507becb1]
+2019-12-20 14:07:32,089 INFO org.springframework.security.web.DefaultSecurityFilterChain [main] Creating filter chain: Ant [pattern='/saml/login/**'], [esmo.test.ap.apms.SamlWithRelayStateEntryPoint@147573af]
+2019-12-20 14:07:32,092 INFO org.springframework.security.web.DefaultSecurityFilterChain [main] Creating filter chain: Ant [pattern='/saml/SSO/**'], [org.springframework.security.saml.SAMLProcessingFilter@622d6931]
+2019-12-20 14:07:32,094 INFO org.springframework.security.web.DefaultSecurityFilterChain [main] Creating filter chain: Ant [pattern='/saml/logout/**'], [org.springframework.security.saml.SAMLLogoutFilter@77be9b8f]
+2019-12-20 14:07:32,106 INFO org.springframework.security.web.DefaultSecurityFilterChain [main] Creating filter chain: Ant [pattern='/saml/SingleLogout/**'], [org.springframework.security.saml.SAMLLogoutProcessingFilter@138bab56]
+2019-12-20 14:07:32,372 WARN org.springframework.context.support.AbstractApplicationContext [main] Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'samlControllers' defined in file [/home/carlos/Documents/prj/seal/GRAPms/target/classes/esmo/test/ap/apms/controllers/SamlControllers.class]: Bean instantiation via constructor failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [esmo.test.ap.apms.controllers.SamlControllers]: Constructor threw exception; nested exception is java.lang.NullPointerException
+2019-12-20 14:07:33,382 INFO org.apache.juli.logging.DirectJDKLog [main] Stopping service [Tomcat]
+2019-12-20 14:07:33,398 WARN org.apache.juli.logging.DirectJDKLog [main] The web application [ROOT] appears to have started a thread named [Timer-0] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ java.lang.Object.wait(Native Method)
+ java.util.TimerThread.mainLoop(Timer.java:552)
+ java.util.TimerThread.run(Timer.java:505)
+2019-12-20 14:07:33,567 INFO org.springframework.boot.autoconfigure.logging.ConditionEvaluationReportLoggingListener [main] 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2019-12-20 14:07:33,605 ERROR org.springframework.boot.SpringApplication [main] Application run failed
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'samlControllers' defined in file [/home/carlos/Documents/prj/seal/GRAPms/target/classes/esmo/test/ap/apms/controllers/SamlControllers.class]: Bean instantiation via constructor failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [esmo.test.ap.apms.controllers.SamlControllers]: Constructor threw exception; nested exception is java.lang.NullPointerException
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:304)
+	at org.springframework.beans.factory.support.ConstructorResolver.autowireConstructor(ConstructorResolver.java:285)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireConstructor(AbstractAutowireCapableBeanFactory.java:1325)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1171)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:555)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:515)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:320)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:222)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:318)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:849)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:877)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:549)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:142)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:775)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:397)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:316)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1260)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1248)
+	at esmo.test.ap.apms.ApmsApplication.main(ApmsApplication.java:10)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.boot.maven.AbstractRunMojo$LaunchRunner.run(AbstractRunMojo.java:558)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: org.springframework.beans.BeanInstantiationException: Failed to instantiate [esmo.test.ap.apms.controllers.SamlControllers]: Constructor threw exception; nested exception is java.lang.NullPointerException
+	at org.springframework.beans.BeanUtils.instantiateClass(BeanUtils.java:184)
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:117)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:300)
+	... 25 common frames omitted
+Caused by: java.lang.NullPointerException: null
+	at esmo.test.ap.apms.service.impl.KeyStoreServiceImpl.getSigningKey(KeyStoreServiceImpl.java:75)
+	at esmo.test.ap.apms.controllers.SamlControllers.<init>(SamlControllers.java:82)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at org.springframework.beans.BeanUtils.instantiateClass(BeanUtils.java:172)
+	... 27 common frames omitted
+2019-12-20 14:21:05,096 INFO org.springframework.boot.StartupInfoLogger [main] Starting ApmsApplication on carlos-VirtualBox with PID 6119 (/home/carlos/Documents/prj/seal/GRAPms/target/classes started by carlos in /home/carlos/Documents/prj/seal/GRAPms)
+2019-12-20 14:21:05,107 INFO org.springframework.boot.SpringApplication [main] No active profile set, falling back to default profiles: default
+2019-12-20 14:21:11,735 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [main] Tomcat initialized with port(s): 8443 (https) 8080 (http)
+2019-12-20 14:21:11,817 INFO org.apache.juli.logging.DirectJDKLog [main] Initializing ProtocolHandler ["https-jsse-nio-8443"]
+2019-12-20 14:21:11,926 INFO org.apache.juli.logging.DirectJDKLog [main] Initializing ProtocolHandler ["http-nio-8080"]
+2019-12-20 14:21:11,996 INFO org.apache.juli.logging.DirectJDKLog [main] Starting service [Tomcat]
+2019-12-20 14:21:11,997 INFO org.apache.juli.logging.DirectJDKLog [main] Starting Servlet engine: [Apache Tomcat/9.0.16]
+2019-12-20 14:21:12,046 INFO org.apache.juli.logging.DirectJDKLog [main] The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [/usr/java/packages/lib/amd64:/usr/lib/x86_64-linux-gnu/jni:/lib/x86_64-linux-gnu:/usr/lib/x86_64-linux-gnu:/usr/lib/jni:/lib:/usr/lib]
+2019-12-20 14:21:12,292 INFO org.apache.juli.logging.DirectJDKLog [main] Initializing Spring embedded WebApplicationContext
+2019-12-20 14:21:12,293 INFO org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext [main] Root WebApplicationContext: initialization completed in 6973 ms
+2019-12-20 14:21:14,707 INFO org.opensaml.saml2.metadata.provider.AbstractReloadingMetadataProvider [main] New metadata succesfully loaded for 'https://idp.aegean.gr/idp/shibboleth'
+2019-12-20 14:21:14,744 INFO org.opensaml.saml2.metadata.provider.AbstractReloadingMetadataProvider [main] Next refresh cycle for metadata provider 'https://idp.aegean.gr/idp/shibboleth' will occur on '2019-12-20T16:21:13.715Z' ('2019-12-20T17:21:13.715+01:00' local time)
+2019-12-20 14:21:14,771 INFO esmo.test.ap.apms.SamlSecurityConfig [main] Using SAMLContextProviderLB implementation of SAMLContextProvider for context provider bean.
+2019-12-20 14:21:14,797 INFO esmo.test.ap.apms.SamlSecurityConfig [main] Setting the load balancer scheme to https
+2019-12-20 14:21:14,799 INFO esmo.test.ap.apms.SamlSecurityConfig [main] Setting the load balancer server name to serverName
+2019-12-20 14:21:14,804 INFO esmo.test.ap.apms.SamlSecurityConfig [main] Setting the load balancer context path to /grap
+2019-12-20 14:21:14,805 INFO esmo.test.ap.apms.SamlSecurityConfig [main] Setting the load balancer port to 443
+2019-12-20 14:21:14,805 INFO esmo.test.ap.apms.SamlSecurityConfig [main] Setting whether to include the server port in the request URL to false
+2019-12-20 14:21:15,229 INFO org.springframework.security.web.DefaultSecurityFilterChain [main] Creating filter chain: Ant [pattern='/saml/metadata/**'], [org.springframework.security.saml.metadata.MetadataDisplayFilter@385d52d6]
+2019-12-20 14:21:15,230 INFO org.springframework.security.web.DefaultSecurityFilterChain [main] Creating filter chain: Ant [pattern='/saml/login/**'], [esmo.test.ap.apms.SamlWithRelayStateEntryPoint@32dec68d]
+2019-12-20 14:21:15,230 INFO org.springframework.security.web.DefaultSecurityFilterChain [main] Creating filter chain: Ant [pattern='/saml/SSO/**'], [org.springframework.security.saml.SAMLProcessingFilter@481ae301]
+2019-12-20 14:21:15,231 INFO org.springframework.security.web.DefaultSecurityFilterChain [main] Creating filter chain: Ant [pattern='/saml/logout/**'], [org.springframework.security.saml.SAMLLogoutFilter@23ef4b0]
+2019-12-20 14:21:15,231 INFO org.springframework.security.web.DefaultSecurityFilterChain [main] Creating filter chain: Ant [pattern='/saml/SingleLogout/**'], [org.springframework.security.saml.SAMLLogoutProcessingFilter@3d12a9a]
+2019-12-20 14:21:15,468 WARN org.springframework.context.support.AbstractApplicationContext [main] Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'samlControllers' defined in file [/home/carlos/Documents/prj/seal/GRAPms/target/classes/esmo/test/ap/apms/controllers/SamlControllers.class]: Bean instantiation via constructor failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [esmo.test.ap.apms.controllers.SamlControllers]: Constructor threw exception; nested exception is java.lang.NullPointerException
+2019-12-20 14:21:16,494 INFO org.apache.juli.logging.DirectJDKLog [main] Stopping service [Tomcat]
+2019-12-20 14:21:16,510 WARN org.apache.juli.logging.DirectJDKLog [main] The web application [ROOT] appears to have started a thread named [Timer-0] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ java.lang.Object.wait(Native Method)
+ java.util.TimerThread.mainLoop(Timer.java:552)
+ java.util.TimerThread.run(Timer.java:505)
+2019-12-20 14:21:16,558 INFO org.springframework.boot.autoconfigure.logging.ConditionEvaluationReportLoggingListener [main] 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2019-12-20 14:21:16,587 ERROR org.springframework.boot.SpringApplication [main] Application run failed
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'samlControllers' defined in file [/home/carlos/Documents/prj/seal/GRAPms/target/classes/esmo/test/ap/apms/controllers/SamlControllers.class]: Bean instantiation via constructor failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [esmo.test.ap.apms.controllers.SamlControllers]: Constructor threw exception; nested exception is java.lang.NullPointerException
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:304)
+	at org.springframework.beans.factory.support.ConstructorResolver.autowireConstructor(ConstructorResolver.java:285)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireConstructor(AbstractAutowireCapableBeanFactory.java:1325)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1171)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:555)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:515)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:320)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:222)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:318)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:849)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:877)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:549)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:142)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:775)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:397)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:316)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1260)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1248)
+	at esmo.test.ap.apms.ApmsApplication.main(ApmsApplication.java:10)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.boot.maven.AbstractRunMojo$LaunchRunner.run(AbstractRunMojo.java:558)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: org.springframework.beans.BeanInstantiationException: Failed to instantiate [esmo.test.ap.apms.controllers.SamlControllers]: Constructor threw exception; nested exception is java.lang.NullPointerException
+	at org.springframework.beans.BeanUtils.instantiateClass(BeanUtils.java:184)
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:117)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:300)
+	... 25 common frames omitted
+Caused by: java.lang.NullPointerException: null
+	at esmo.test.ap.apms.service.impl.KeyStoreServiceImpl.getSigningKey(KeyStoreServiceImpl.java:75)
+	at esmo.test.ap.apms.controllers.SamlControllers.<init>(SamlControllers.java:81)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at org.springframework.beans.BeanUtils.instantiateClass(BeanUtils.java:172)
+	... 27 common frames omitted
+2019-12-20 14:23:31,065 INFO org.springframework.boot.StartupInfoLogger [main] Starting ApmsApplication on carlos-VirtualBox with PID 6250 (/home/carlos/Documents/prj/seal/GRAPms/target/classes started by carlos in /home/carlos/Documents/prj/seal/GRAPms)
+2019-12-20 14:23:31,081 INFO org.springframework.boot.SpringApplication [main] No active profile set, falling back to default profiles: default
+2019-12-20 14:23:36,502 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [main] Tomcat initialized with port(s): 8443 (https) 8080 (http)
+2019-12-20 14:23:36,577 INFO org.apache.juli.logging.DirectJDKLog [main] Initializing ProtocolHandler ["https-jsse-nio-8443"]
+2019-12-20 14:23:36,630 INFO org.apache.juli.logging.DirectJDKLog [main] Initializing ProtocolHandler ["http-nio-8080"]
+2019-12-20 14:23:36,680 INFO org.apache.juli.logging.DirectJDKLog [main] Starting service [Tomcat]
+2019-12-20 14:23:36,690 INFO org.apache.juli.logging.DirectJDKLog [main] Starting Servlet engine: [Apache Tomcat/9.0.16]
+2019-12-20 14:23:36,739 INFO org.apache.juli.logging.DirectJDKLog [main] The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [/usr/java/packages/lib/amd64:/usr/lib/x86_64-linux-gnu/jni:/lib/x86_64-linux-gnu:/usr/lib/x86_64-linux-gnu:/usr/lib/jni:/lib:/usr/lib]
+2019-12-20 14:23:36,943 INFO org.apache.juli.logging.DirectJDKLog [main] Initializing Spring embedded WebApplicationContext
+2019-12-20 14:23:36,944 INFO org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext [main] Root WebApplicationContext: initialization completed in 5438 ms
+2019-12-20 14:23:38,932 INFO org.opensaml.saml2.metadata.provider.AbstractReloadingMetadataProvider [main] New metadata succesfully loaded for 'https://idp.aegean.gr/idp/shibboleth'
+2019-12-20 14:23:38,969 INFO org.opensaml.saml2.metadata.provider.AbstractReloadingMetadataProvider [main] Next refresh cycle for metadata provider 'https://idp.aegean.gr/idp/shibboleth' will occur on '2019-12-20T16:23:38.084Z' ('2019-12-20T17:23:38.084+01:00' local time)
+2019-12-20 14:23:38,995 INFO esmo.test.ap.apms.SamlSecurityConfig [main] Using SAMLContextProviderLB implementation of SAMLContextProvider for context provider bean.
+2019-12-20 14:23:39,014 INFO esmo.test.ap.apms.SamlSecurityConfig [main] Setting the load balancer scheme to https
+2019-12-20 14:23:39,016 INFO esmo.test.ap.apms.SamlSecurityConfig [main] Setting the load balancer server name to serverName
+2019-12-20 14:23:39,019 INFO esmo.test.ap.apms.SamlSecurityConfig [main] Setting the load balancer context path to /grap
+2019-12-20 14:23:39,020 INFO esmo.test.ap.apms.SamlSecurityConfig [main] Setting the load balancer port to 443
+2019-12-20 14:23:39,021 INFO esmo.test.ap.apms.SamlSecurityConfig [main] Setting whether to include the server port in the request URL to false
+2019-12-20 14:23:39,358 INFO org.springframework.security.web.DefaultSecurityFilterChain [main] Creating filter chain: Ant [pattern='/saml/metadata/**'], [org.springframework.security.saml.metadata.MetadataDisplayFilter@799cd7f7]
+2019-12-20 14:23:39,359 INFO org.springframework.security.web.DefaultSecurityFilterChain [main] Creating filter chain: Ant [pattern='/saml/login/**'], [esmo.test.ap.apms.SamlWithRelayStateEntryPoint@1c35470d]
+2019-12-20 14:23:39,361 INFO org.springframework.security.web.DefaultSecurityFilterChain [main] Creating filter chain: Ant [pattern='/saml/SSO/**'], [org.springframework.security.saml.SAMLProcessingFilter@f42445f]
+2019-12-20 14:23:39,362 INFO org.springframework.security.web.DefaultSecurityFilterChain [main] Creating filter chain: Ant [pattern='/saml/logout/**'], [org.springframework.security.saml.SAMLLogoutFilter@38cc0772]
+2019-12-20 14:23:39,373 INFO org.springframework.security.web.DefaultSecurityFilterChain [main] Creating filter chain: Ant [pattern='/saml/SingleLogout/**'], [org.springframework.security.saml.SAMLLogoutProcessingFilter@3b26a32d]
+2019-12-20 14:23:39,604 INFO com.google.code.ssm.config.DefaultAddressProvider [main] Defined values 127.0.0.1:11211 will be used as memcached addresses
+2019-12-20 14:23:40,312 INFO org.springframework.scheduling.concurrent.ExecutorConfigurationSupport [main] Initializing ExecutorService 'applicationTaskExecutor'
+2019-12-20 14:23:41,015 INFO org.springframework.security.web.DefaultSecurityFilterChain [main] Creating filter chain: any request, [org.springframework.security.saml.metadata.MetadataGeneratorFilter@26993c4b, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@5604d1e1, org.springframework.security.web.context.SecurityContextPersistenceFilter@632b2531, org.springframework.security.web.header.HeaderWriterFilter@40fc23c6, org.springframework.security.web.authentication.logout.LogoutFilter@2c2dbe7a, FilterChainProxy[Filter Chains: [[ Ant [pattern='/saml/metadata/**'], [org.springframework.security.saml.metadata.MetadataDisplayFilter@799cd7f7]], [ Ant [pattern='/saml/login/**'], [esmo.test.ap.apms.SamlWithRelayStateEntryPoint@1c35470d]], [ Ant [pattern='/saml/SSO/**'], [org.springframework.security.saml.SAMLProcessingFilter@f42445f]], [ Ant [pattern='/saml/logout/**'], [org.springframework.security.saml.SAMLLogoutFilter@38cc0772]], [ Ant [pattern='/saml/SingleLogout/**'], [org.springframework.security.saml.SAMLLogoutProcessingFilter@3b26a32d]]]], org.springframework.security.web.savedrequest.RequestCacheAwareFilter@41a5f529, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@5f2b3485, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@7682dc8d, org.springframework.security.web.session.SessionManagementFilter@2b101cc, org.springframework.security.web.access.ExceptionTranslationFilter@e36cdb9, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@1d1512fc]
+2019-12-20 14:23:41,260 INFO org.apache.juli.logging.DirectJDKLog [main] Starting ProtocolHandler ["https-jsse-nio-8443"]
+2019-12-20 14:23:42,171 INFO org.apache.juli.logging.DirectJDKLog [main] Starting ProtocolHandler ["http-nio-8080"]
+2019-12-20 14:23:42,189 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [main] Tomcat started on port(s): 8443 (https) 8080 (http) with context path ''
+2019-12-20 14:23:42,198 INFO org.springframework.boot.StartupInfoLogger [main] Started ApmsApplication in 12.63 seconds (JVM running for 23.793)
+2019-12-20 14:24:57,308 INFO org.apache.juli.logging.DirectJDKLog [http-nio-8080-exec-2] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2019-12-20 14:24:57,318 INFO org.springframework.web.servlet.FrameworkServlet [http-nio-8080-exec-2] Initializing Servlet 'dispatcherServlet'
+2019-12-20 14:24:57,379 INFO org.springframework.web.servlet.FrameworkServlet [http-nio-8080-exec-2] Completed initialization in 57 ms
+2019-12-20 14:24:57,452 INFO org.springframework.security.saml.metadata.MetadataGeneratorFilter [http-nio-8080-exec-2] No default metadata configured, generating with default values, please pre-configure metadata for production use
+2019-12-20 14:24:57,572 INFO org.springframework.security.saml.metadata.MetadataGeneratorFilter [http-nio-8080-exec-2] Created default metadata for system with entityID: esmoSamlClient
+2019-12-20 14:24:58,011 INFO esmo.test.ap.apms.controllers.SamlControllers [http-nio-8080-exec-2] SessionID b7215a49-2941-4b54-83fd-7117b09c710e
+2019-12-20 14:24:58,036 ERROR org.apache.juli.logging.DirectJDKLog [http-nio-8080-exec-2] Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is java.lang.ClassCastException: java.util.LinkedHashMap cannot be cast to java.lang.String] with root cause
+java.lang.ClassCastException: java.util.LinkedHashMap cannot be cast to java.lang.String
+	at esmo.test.ap.apms.controllers.SamlControllers.queryAp(SamlControllers.java:110)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:189)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:138)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:102)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:895)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:800)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1038)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:942)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1005)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:897)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:634)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:882)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:209)
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:186)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.security.saml.metadata.MetadataGeneratorFilter.doFilter(MetadataGeneratorFilter.java:87)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.security.saml.SAMLLogoutProcessingFilter.processLogout(SAMLLogoutProcessingFilter.java:209)
+	at org.springframework.security.saml.SAMLLogoutProcessingFilter.doFilter(SAMLLogoutProcessingFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.security.saml.SAMLLogoutFilter.processLogout(SAMLLogoutFilter.java:168)
+	at org.springframework.security.saml.SAMLLogoutFilter.doFilter(SAMLLogoutFilter.java:110)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter.doFilter(AbstractAuthenticationProcessingFilter.java:200)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.security.saml.metadata.MetadataDisplayFilter.doFilter(MetadataDisplayFilter.java:84)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.security.saml.SAMLEntryPoint.doFilter(SAMLEntryPoint.java:102)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:320)
+	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.invoke(FilterSecurityInterceptor.java:127)
+	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.doFilter(FilterSecurityInterceptor.java:91)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:119)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:137)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.authentication.AnonymousAuthenticationFilter.doFilter(AnonymousAuthenticationFilter.java:111)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter.doFilter(SecurityContextHolderAwareRequestFilter.java:170)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.savedrequest.RequestCacheAwareFilter.doFilter(RequestCacheAwareFilter.java:63)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:209)
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:186)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:74)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.context.SecurityContextPersistenceFilter.doFilter(SecurityContextPersistenceFilter.java:105)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:56)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.saml.metadata.MetadataGeneratorFilter.doFilter(MetadataGeneratorFilter.java:87)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:215)
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:178)
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:357)
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:270)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:99)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:92)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.HiddenHttpMethodFilter.doFilterInternal(HiddenHttpMethodFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:200)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:200)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:490)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:408)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:834)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1415)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:748)
+2019-12-20 14:24:59,619 INFO org.springframework.security.saml.log.SAMLDefaultLogger [http-nio-8080-exec-3] AuthNRequest;SUCCESS;127.0.0.1;esmoSamlClient;https://idp.aegean.gr/idp/shibboleth;;;
+2019-12-20 14:25:53,234 INFO org.springframework.scheduling.concurrent.ExecutorConfigurationSupport [Thread-8] Shutting down ExecutorService 'applicationTaskExecutor'
+2019-12-20 14:26:09,610 INFO org.springframework.boot.StartupInfoLogger [main] Starting ApmsApplication on carlos-VirtualBox with PID 6497 (/home/carlos/Documents/prj/seal/GRAPms/target/classes started by carlos in /home/carlos/Documents/prj/seal/GRAPms)
+2019-12-20 14:26:09,640 INFO org.springframework.boot.SpringApplication [main] No active profile set, falling back to default profiles: default
+2019-12-20 14:26:17,994 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [main] Tomcat initialized with port(s): 8443 (https) 8080 (http)
+2019-12-20 14:26:18,051 INFO org.apache.juli.logging.DirectJDKLog [main] Initializing ProtocolHandler ["https-jsse-nio-8443"]
+2019-12-20 14:26:18,149 INFO org.apache.juli.logging.DirectJDKLog [main] Initializing ProtocolHandler ["http-nio-8080"]
+2019-12-20 14:26:18,190 INFO org.apache.juli.logging.DirectJDKLog [main] Starting service [Tomcat]
+2019-12-20 14:26:18,191 INFO org.apache.juli.logging.DirectJDKLog [main] Starting Servlet engine: [Apache Tomcat/9.0.16]
+2019-12-20 14:26:18,220 INFO org.apache.juli.logging.DirectJDKLog [main] The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [/usr/java/packages/lib/amd64:/usr/lib/x86_64-linux-gnu/jni:/lib/x86_64-linux-gnu:/usr/lib/x86_64-linux-gnu:/usr/lib/jni:/lib:/usr/lib]
+2019-12-20 14:26:18,397 INFO org.apache.juli.logging.DirectJDKLog [main] Initializing Spring embedded WebApplicationContext
+2019-12-20 14:26:18,398 INFO org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext [main] Root WebApplicationContext: initialization completed in 8614 ms
+2019-12-20 14:26:21,070 INFO org.opensaml.saml2.metadata.provider.AbstractReloadingMetadataProvider [main] New metadata succesfully loaded for 'https://idp.aegean.gr/idp/shibboleth'
+2019-12-20 14:26:21,135 INFO org.opensaml.saml2.metadata.provider.AbstractReloadingMetadataProvider [main] Next refresh cycle for metadata provider 'https://idp.aegean.gr/idp/shibboleth' will occur on '2019-12-20T16:26:19.956Z' ('2019-12-20T17:26:19.956+01:00' local time)
+2019-12-20 14:26:21,172 INFO esmo.test.ap.apms.SamlSecurityConfig [main] Using SAMLContextProviderLB implementation of SAMLContextProvider for context provider bean.
+2019-12-20 14:26:21,199 INFO esmo.test.ap.apms.SamlSecurityConfig [main] Setting the load balancer scheme to https
+2019-12-20 14:26:21,200 INFO esmo.test.ap.apms.SamlSecurityConfig [main] Setting the load balancer server name to serverName
+2019-12-20 14:26:21,203 INFO esmo.test.ap.apms.SamlSecurityConfig [main] Setting the load balancer context path to /grap
+2019-12-20 14:26:21,212 INFO esmo.test.ap.apms.SamlSecurityConfig [main] Setting the load balancer port to 443
+2019-12-20 14:26:21,213 INFO esmo.test.ap.apms.SamlSecurityConfig [main] Setting whether to include the server port in the request URL to false
+2019-12-20 14:26:21,731 INFO org.springframework.security.web.DefaultSecurityFilterChain [main] Creating filter chain: Ant [pattern='/saml/metadata/**'], [org.springframework.security.saml.metadata.MetadataDisplayFilter@44997482]
+2019-12-20 14:26:21,735 INFO org.springframework.security.web.DefaultSecurityFilterChain [main] Creating filter chain: Ant [pattern='/saml/login/**'], [esmo.test.ap.apms.SamlWithRelayStateEntryPoint@66c7adbd]
+2019-12-20 14:26:21,741 INFO org.springframework.security.web.DefaultSecurityFilterChain [main] Creating filter chain: Ant [pattern='/saml/SSO/**'], [org.springframework.security.saml.SAMLProcessingFilter@2c44689d]
+2019-12-20 14:26:21,742 INFO org.springframework.security.web.DefaultSecurityFilterChain [main] Creating filter chain: Ant [pattern='/saml/logout/**'], [org.springframework.security.saml.SAMLLogoutFilter@478accbb]
+2019-12-20 14:26:21,757 INFO org.springframework.security.web.DefaultSecurityFilterChain [main] Creating filter chain: Ant [pattern='/saml/SingleLogout/**'], [org.springframework.security.saml.SAMLLogoutProcessingFilter@79881e46]
+2019-12-20 14:26:22,251 INFO com.google.code.ssm.config.DefaultAddressProvider [main] Defined values 127.0.0.1:11211 will be used as memcached addresses
+2019-12-20 14:26:23,230 INFO org.springframework.scheduling.concurrent.ExecutorConfigurationSupport [main] Initializing ExecutorService 'applicationTaskExecutor'
+2019-12-20 14:26:24,479 INFO org.springframework.security.web.DefaultSecurityFilterChain [main] Creating filter chain: any request, [org.springframework.security.saml.metadata.MetadataGeneratorFilter@7407bf48, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@1e1efb21, org.springframework.security.web.context.SecurityContextPersistenceFilter@4e4393b6, org.springframework.security.web.header.HeaderWriterFilter@3bafa896, org.springframework.security.web.authentication.logout.LogoutFilter@5c107758, FilterChainProxy[Filter Chains: [[ Ant [pattern='/saml/metadata/**'], [org.springframework.security.saml.metadata.MetadataDisplayFilter@44997482]], [ Ant [pattern='/saml/login/**'], [esmo.test.ap.apms.SamlWithRelayStateEntryPoint@66c7adbd]], [ Ant [pattern='/saml/SSO/**'], [org.springframework.security.saml.SAMLProcessingFilter@2c44689d]], [ Ant [pattern='/saml/logout/**'], [org.springframework.security.saml.SAMLLogoutFilter@478accbb]], [ Ant [pattern='/saml/SingleLogout/**'], [org.springframework.security.saml.SAMLLogoutProcessingFilter@79881e46]]]], org.springframework.security.web.savedrequest.RequestCacheAwareFilter@6ed442be, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@7abe202, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@4c12d9f9, org.springframework.security.web.session.SessionManagementFilter@2b65eb, org.springframework.security.web.access.ExceptionTranslationFilter@4c862002, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@240a06f4]
+2019-12-20 14:26:24,731 INFO org.apache.juli.logging.DirectJDKLog [main] Starting ProtocolHandler ["https-jsse-nio-8443"]
+2019-12-20 14:26:25,606 INFO org.apache.juli.logging.DirectJDKLog [main] Starting ProtocolHandler ["http-nio-8080"]
+2019-12-20 14:26:25,717 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [main] Tomcat started on port(s): 8443 (https) 8080 (http) with context path ''
+2019-12-20 14:26:25,744 INFO org.springframework.boot.StartupInfoLogger [main] Started ApmsApplication in 18.301 seconds (JVM running for 29.868)
+2019-12-20 14:26:25,908 INFO org.apache.juli.logging.DirectJDKLog [http-nio-8080-exec-1] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2019-12-20 14:26:25,912 INFO org.springframework.web.servlet.FrameworkServlet [http-nio-8080-exec-1] Initializing Servlet 'dispatcherServlet'
+2019-12-20 14:26:25,962 INFO org.springframework.web.servlet.FrameworkServlet [http-nio-8080-exec-1] Completed initialization in 45 ms
+2019-12-20 14:26:26,021 INFO org.springframework.security.saml.metadata.MetadataGeneratorFilter [http-nio-8080-exec-1] No default metadata configured, generating with default values, please pre-configure metadata for production use
+2019-12-20 14:26:26,171 INFO org.springframework.security.saml.metadata.MetadataGeneratorFilter [http-nio-8080-exec-1] Created default metadata for system with entityID: esmoSamlClient
+2019-12-20 14:26:26,563 INFO esmo.test.ap.apms.controllers.SamlControllers [http-nio-8080-exec-1] SessionID b7215a49-2941-4b54-83fd-7117b09c710e
+2019-12-20 14:26:26,567 INFO esmo.test.ap.apms.controllers.SamlControllers [http-nio-8080-exec-1] Session: {id=_394a55a94873c15144a62678dafed1573503f4a6ab, type=Request, issuer=https:"//clave.sir2.rediris.es/module.php/saml/sp/saml2-acs.php/q2891006e_ea0002678", recipient=null, inResponseTo=null, loa=null, notBefore=2019-12-17T11:"50:54Z", notAfter=2020-12-15T11:"55:54Z", status={code=null, subcode=null, message=null}, attributes=[{name=https:"//software.internet2.edu/eduperson/internet2-mace-dir-eduperson-201602.html#eduPersonTargetedID", friendlyName=eduPersonTargetedID, encoding=UTF-8, isMandatory=false, values=null}, {name=https:"//software.internet2.edu/eduperson/internet2-mace-dir-eduperson-201602.html#displayName", friendlyName=displayName, encoding=UTF-8, isMandatory=false, values=null}, {name=https:"//software.internet2.edu/eduperson/internet2-mace-dir-eduperson-201602.html#cn", friendlyName=cn, encoding=UTF-8, isMandatory=false, values=null}, {name=https:"//software.internet2.edu/eduperson/internet2-mace-dir-eduperson-201602.html#mail", friendlyName=mail, encoding=UTF-8, isMandatory=false, values=null}, {name=https:"//software.internet2.edu/eduperson/internet2-mace-dir-eduperson-201602.html#eduPersonAffiliation", friendlyName=eduPersonAffiliation, encoding=UTF-8, isMandatory=false, values=null}, {name=https:"//software.internet2.edu/eduperson/internet2-mace-dir-eduperson-201602.html#eduPersonScopedAffiliation", friendlyName=eduPersonScopedAffiliation, encoding=UTF-8, isMandatory=false, values=null}, {name=https:"//www.terena.org/activities/tf-emc2/docs/schac/schac-20110705-1.4.1.schema.txt#schacHomeOrganization", friendlyName=schacHomeOrganization, encoding=UTF-8, language=null, isMandatory=false, values=null}, {name=https:"//www.terena.org/activities/tf-emc2/docs/schac/schac-20110705-1.4.1.schema.txt#schacHomeOrganizationType", friendlyName=schacHomeOrganizationType, encoding=UTF-8, language=null, isMandatory=false, values=null}], properties={SAML_RelayState=, SAML_RemoteSP_RequestId=_d951f7da6fd1cb7d2de7ab4df483098e, SAML_ForceAuthn=true, SAML_isPassive=false, SAML_NameIDFormat=urn:"oasis:names:tc:SAML:2.0:nameid-format:persistent", SAML_AllowCreate=true}}
+2019-12-20 14:26:26,674 INFO esmo.test.ap.apms.controllers.SamlControllers [http-nio-8080-exec-1] Unexpected character ('i' (code 105)): was expecting double-quote to start field name
+ at [Source: (String)"{id=_394a55a94873c15144a62678dafed1573503f4a6ab, type=Request, issuer=https:"//clave.sir2.rediris.es/module.php/saml/sp/saml2-acs.php/q2891006e_ea0002678", recipient=null, inResponseTo=null, loa=null, notBefore=2019-12-17T11:"50:54Z", notAfter=2020-12-15T11:"55:54Z", status={code=null, subcode=null, message=null}, attributes=[{name=https:"//software.internet2.edu/eduperson/internet2-mace-dir-eduperson-201602.html#eduPersonTargetedID", friendlyName=eduPersonTargetedID, encoding=UTF-8, isMandatory"[truncated 1599 chars]; line: 1, column: 3]
+2019-12-20 14:28:33,245 INFO org.springframework.scheduling.concurrent.ExecutorConfigurationSupport [Thread-8] Shutting down ExecutorService 'applicationTaskExecutor'
+2019-12-20 14:28:44,860 INFO org.springframework.boot.StartupInfoLogger [main] Starting ApmsApplication on carlos-VirtualBox with PID 6620 (/home/carlos/Documents/prj/seal/GRAPms/target/classes started by carlos in /home/carlos/Documents/prj/seal/GRAPms)
+2019-12-20 14:28:44,866 INFO org.springframework.boot.SpringApplication [main] No active profile set, falling back to default profiles: default
+2019-12-20 14:28:51,975 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [main] Tomcat initialized with port(s): 8443 (https) 8080 (http)
+2019-12-20 14:28:52,061 INFO org.apache.juli.logging.DirectJDKLog [main] Initializing ProtocolHandler ["https-jsse-nio-8443"]
+2019-12-20 14:28:52,097 INFO org.apache.juli.logging.DirectJDKLog [main] Initializing ProtocolHandler ["http-nio-8080"]
+2019-12-20 14:28:52,128 INFO org.apache.juli.logging.DirectJDKLog [main] Starting service [Tomcat]
+2019-12-20 14:28:52,134 INFO org.apache.juli.logging.DirectJDKLog [main] Starting Servlet engine: [Apache Tomcat/9.0.16]
+2019-12-20 14:28:52,162 INFO org.apache.juli.logging.DirectJDKLog [main] The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [/usr/java/packages/lib/amd64:/usr/lib/x86_64-linux-gnu/jni:/lib/x86_64-linux-gnu:/usr/lib/x86_64-linux-gnu:/usr/lib/jni:/lib:/usr/lib]
+2019-12-20 14:28:52,337 INFO org.apache.juli.logging.DirectJDKLog [main] Initializing Spring embedded WebApplicationContext
+2019-12-20 14:28:52,338 INFO org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext [main] Root WebApplicationContext: initialization completed in 7114 ms
+2019-12-20 14:28:56,831 INFO org.opensaml.saml2.metadata.provider.AbstractReloadingMetadataProvider [main] New metadata succesfully loaded for 'https://idp.aegean.gr/idp/shibboleth'
+2019-12-20 14:28:56,909 INFO org.opensaml.saml2.metadata.provider.AbstractReloadingMetadataProvider [main] Next refresh cycle for metadata provider 'https://idp.aegean.gr/idp/shibboleth' will occur on '2019-12-20T16:28:54.171Z' ('2019-12-20T17:28:54.171+01:00' local time)
+2019-12-20 14:28:56,970 INFO esmo.test.ap.apms.SamlSecurityConfig [main] Using SAMLContextProviderLB implementation of SAMLContextProvider for context provider bean.
+2019-12-20 14:28:56,991 INFO esmo.test.ap.apms.SamlSecurityConfig [main] Setting the load balancer scheme to https
+2019-12-20 14:28:56,992 INFO esmo.test.ap.apms.SamlSecurityConfig [main] Setting the load balancer server name to serverName
+2019-12-20 14:28:56,997 INFO esmo.test.ap.apms.SamlSecurityConfig [main] Setting the load balancer context path to /grap
+2019-12-20 14:28:56,998 INFO esmo.test.ap.apms.SamlSecurityConfig [main] Setting the load balancer port to 443
+2019-12-20 14:28:57,001 INFO esmo.test.ap.apms.SamlSecurityConfig [main] Setting whether to include the server port in the request URL to false
+2019-12-20 14:28:58,097 INFO org.springframework.security.web.DefaultSecurityFilterChain [main] Creating filter chain: Ant [pattern='/saml/metadata/**'], [org.springframework.security.saml.metadata.MetadataDisplayFilter@1abee64d]
+2019-12-20 14:28:58,108 INFO org.springframework.security.web.DefaultSecurityFilterChain [main] Creating filter chain: Ant [pattern='/saml/login/**'], [esmo.test.ap.apms.SamlWithRelayStateEntryPoint@31d4dbf]
+2019-12-20 14:28:58,113 INFO org.springframework.security.web.DefaultSecurityFilterChain [main] Creating filter chain: Ant [pattern='/saml/SSO/**'], [org.springframework.security.saml.SAMLProcessingFilter@2954f510]
+2019-12-20 14:28:58,116 INFO org.springframework.security.web.DefaultSecurityFilterChain [main] Creating filter chain: Ant [pattern='/saml/logout/**'], [org.springframework.security.saml.SAMLLogoutFilter@216e0dc7]
+2019-12-20 14:28:58,124 INFO org.springframework.security.web.DefaultSecurityFilterChain [main] Creating filter chain: Ant [pattern='/saml/SingleLogout/**'], [org.springframework.security.saml.SAMLLogoutProcessingFilter@a2d6939]
+2019-12-20 14:28:58,983 INFO com.google.code.ssm.config.DefaultAddressProvider [main] Defined values 127.0.0.1:11211 will be used as memcached addresses
+2019-12-20 14:29:01,451 INFO org.springframework.scheduling.concurrent.ExecutorConfigurationSupport [main] Initializing ExecutorService 'applicationTaskExecutor'
+2019-12-20 14:29:03,393 INFO org.springframework.security.web.DefaultSecurityFilterChain [main] Creating filter chain: any request, [org.springframework.security.saml.metadata.MetadataGeneratorFilter@386b7cc3, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@45b8c478, org.springframework.security.web.context.SecurityContextPersistenceFilter@79868d71, org.springframework.security.web.header.HeaderWriterFilter@6c4a307c, org.springframework.security.web.authentication.logout.LogoutFilter@1f4dd8b8, FilterChainProxy[Filter Chains: [[ Ant [pattern='/saml/metadata/**'], [org.springframework.security.saml.metadata.MetadataDisplayFilter@1abee64d]], [ Ant [pattern='/saml/login/**'], [esmo.test.ap.apms.SamlWithRelayStateEntryPoint@31d4dbf]], [ Ant [pattern='/saml/SSO/**'], [org.springframework.security.saml.SAMLProcessingFilter@2954f510]], [ Ant [pattern='/saml/logout/**'], [org.springframework.security.saml.SAMLLogoutFilter@216e0dc7]], [ Ant [pattern='/saml/SingleLogout/**'], [org.springframework.security.saml.SAMLLogoutProcessingFilter@a2d6939]]]], org.springframework.security.web.savedrequest.RequestCacheAwareFilter@3783f4ce, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@6cdbeab8, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@5e87f1b1, org.springframework.security.web.session.SessionManagementFilter@3cdf5e03, org.springframework.security.web.access.ExceptionTranslationFilter@7bf1822a, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@79a041c8]
+2019-12-20 14:29:03,556 INFO org.apache.juli.logging.DirectJDKLog [main] Starting ProtocolHandler ["https-jsse-nio-8443"]
+2019-12-20 14:29:04,389 INFO org.apache.juli.logging.DirectJDKLog [main] Starting ProtocolHandler ["http-nio-8080"]
+2019-12-20 14:29:04,436 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [main] Tomcat started on port(s): 8443 (https) 8080 (http) with context path ''
+2019-12-20 14:29:04,443 INFO org.springframework.boot.StartupInfoLogger [main] Started ApmsApplication in 21.131 seconds (JVM running for 28.714)
+2019-12-20 14:29:05,590 INFO org.apache.juli.logging.DirectJDKLog [http-nio-8080-exec-2] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2019-12-20 14:29:05,595 INFO org.springframework.web.servlet.FrameworkServlet [http-nio-8080-exec-2] Initializing Servlet 'dispatcherServlet'
+2019-12-20 14:29:05,684 INFO org.springframework.web.servlet.FrameworkServlet [http-nio-8080-exec-2] Completed initialization in 86 ms
+2019-12-20 14:29:05,757 INFO org.springframework.security.saml.metadata.MetadataGeneratorFilter [http-nio-8080-exec-2] No default metadata configured, generating with default values, please pre-configure metadata for production use
+2019-12-20 14:29:05,859 INFO org.springframework.security.saml.metadata.MetadataGeneratorFilter [http-nio-8080-exec-2] Created default metadata for system with entityID: esmoSamlClient
+2019-12-20 14:29:06,312 INFO esmo.test.ap.apms.controllers.SamlControllers [http-nio-8080-exec-2] SessionID b7215a49-2941-4b54-83fd-7117b09c710e
+2019-12-20 14:29:06,353 INFO esmo.test.ap.apms.controllers.SamlControllers [http-nio-8080-exec-2] Session: {id=_394a55a94873c15144a62678dafed1573503f4a6ab, type=Request, issuer=https://clave.sir2.rediris.es/module.php/saml/sp/saml2-acs.php/q2891006e_ea0002678, recipient=null, inResponseTo=null, loa=null, notBefore=2019-12-17T11:50:54Z, notAfter=2020-12-15T11:55:54Z, status={code=null, subcode=null, message=null}, attributes=[{name=https://software.internet2.edu/eduperson/internet2-mace-dir-eduperson-201602.html#eduPersonTargetedID, friendlyName=eduPersonTargetedID, encoding=UTF-8, isMandatory=false, values=null}, {name=https://software.internet2.edu/eduperson/internet2-mace-dir-eduperson-201602.html#displayName, friendlyName=displayName, encoding=UTF-8, isMandatory=false, values=null}, {name=https://software.internet2.edu/eduperson/internet2-mace-dir-eduperson-201602.html#cn, friendlyName=cn, encoding=UTF-8, isMandatory=false, values=null}, {name=https://software.internet2.edu/eduperson/internet2-mace-dir-eduperson-201602.html#mail, friendlyName=mail, encoding=UTF-8, isMandatory=false, values=null}, {name=https://software.internet2.edu/eduperson/internet2-mace-dir-eduperson-201602.html#eduPersonAffiliation, friendlyName=eduPersonAffiliation, encoding=UTF-8, isMandatory=false, values=null}, {name=https://software.internet2.edu/eduperson/internet2-mace-dir-eduperson-201602.html#eduPersonScopedAffiliation, friendlyName=eduPersonScopedAffiliation, encoding=UTF-8, isMandatory=false, values=null}, {name=https://www.terena.org/activities/tf-emc2/docs/schac/schac-20110705-1.4.1.schema.txt#schacHomeOrganization, friendlyName=schacHomeOrganization, encoding=UTF-8, language=null, isMandatory=false, values=null}, {name=https://www.terena.org/activities/tf-emc2/docs/schac/schac-20110705-1.4.1.schema.txt#schacHomeOrganizationType, friendlyName=schacHomeOrganizationType, encoding=UTF-8, language=null, isMandatory=false, values=null}], properties={SAML_RelayState=, SAML_RemoteSP_RequestId=_d951f7da6fd1cb7d2de7ab4df483098e, SAML_ForceAuthn=true, SAML_isPassive=false, SAML_NameIDFormat=urn:oasis:names:tc:SAML:2.0:nameid-format:persistent, SAML_AllowCreate=true}}
+2019-12-20 14:29:06,467 INFO esmo.test.ap.apms.controllers.SamlControllers [http-nio-8080-exec-2] Unexpected character ('i' (code 105)): was expecting double-quote to start field name
+ at [Source: (String)"{id=_394a55a94873c15144a62678dafed1573503f4a6ab, type=Request, issuer=https://clave.sir2.rediris.es/module.php/saml/sp/saml2-acs.php/q2891006e_ea0002678, recipient=null, inResponseTo=null, loa=null, notBefore=2019-12-17T11:50:54Z, notAfter=2020-12-15T11:55:54Z, status={code=null, subcode=null, message=null}, attributes=[{name=https://software.internet2.edu/eduperson/internet2-mace-dir-eduperson-201602.html#eduPersonTargetedID, friendlyName=eduPersonTargetedID, encoding=UTF-8, isMandatory=false, "[truncated 1575 chars]; line: 1, column: 3]
+2019-12-20 14:30:28,942 INFO org.springframework.scheduling.concurrent.ExecutorConfigurationSupport [Thread-8] Shutting down ExecutorService 'applicationTaskExecutor'
+2019-12-20 14:30:43,284 INFO org.springframework.boot.StartupInfoLogger [main] Starting ApmsApplication on carlos-VirtualBox with PID 6791 (/home/carlos/Documents/prj/seal/GRAPms/target/classes started by carlos in /home/carlos/Documents/prj/seal/GRAPms)
+2019-12-20 14:30:43,305 INFO org.springframework.boot.SpringApplication [main] No active profile set, falling back to default profiles: default
+2019-12-20 14:30:48,684 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [main] Tomcat initialized with port(s): 8443 (https) 8080 (http)
+2019-12-20 14:30:48,740 INFO org.apache.juli.logging.DirectJDKLog [main] Initializing ProtocolHandler ["https-jsse-nio-8443"]
+2019-12-20 14:30:48,834 INFO org.apache.juli.logging.DirectJDKLog [main] Initializing ProtocolHandler ["http-nio-8080"]
+2019-12-20 14:30:48,860 INFO org.apache.juli.logging.DirectJDKLog [main] Starting service [Tomcat]
+2019-12-20 14:30:48,869 INFO org.apache.juli.logging.DirectJDKLog [main] Starting Servlet engine: [Apache Tomcat/9.0.16]
+2019-12-20 14:30:48,928 INFO org.apache.juli.logging.DirectJDKLog [main] The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [/usr/java/packages/lib/amd64:/usr/lib/x86_64-linux-gnu/jni:/lib/x86_64-linux-gnu:/usr/lib/x86_64-linux-gnu:/usr/lib/jni:/lib:/usr/lib]
+2019-12-20 14:30:49,132 INFO org.apache.juli.logging.DirectJDKLog [main] Initializing Spring embedded WebApplicationContext
+2019-12-20 14:30:49,133 INFO org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext [main] Root WebApplicationContext: initialization completed in 5660 ms
+2019-12-20 14:30:51,905 INFO org.opensaml.saml2.metadata.provider.AbstractReloadingMetadataProvider [main] New metadata succesfully loaded for 'https://idp.aegean.gr/idp/shibboleth'
+2019-12-20 14:30:51,964 INFO org.opensaml.saml2.metadata.provider.AbstractReloadingMetadataProvider [main] Next refresh cycle for metadata provider 'https://idp.aegean.gr/idp/shibboleth' will occur on '2019-12-20T16:30:50.649Z' ('2019-12-20T17:30:50.649+01:00' local time)
+2019-12-20 14:30:52,011 INFO esmo.test.ap.apms.SamlSecurityConfig [main] Using SAMLContextProviderLB implementation of SAMLContextProvider for context provider bean.
+2019-12-20 14:30:52,042 INFO esmo.test.ap.apms.SamlSecurityConfig [main] Setting the load balancer scheme to https
+2019-12-20 14:30:52,044 INFO esmo.test.ap.apms.SamlSecurityConfig [main] Setting the load balancer server name to serverName
+2019-12-20 14:30:52,052 INFO esmo.test.ap.apms.SamlSecurityConfig [main] Setting the load balancer context path to /grap
+2019-12-20 14:30:52,058 INFO esmo.test.ap.apms.SamlSecurityConfig [main] Setting the load balancer port to 443
+2019-12-20 14:30:52,067 INFO esmo.test.ap.apms.SamlSecurityConfig [main] Setting whether to include the server port in the request URL to false
+2019-12-20 14:30:52,646 INFO org.springframework.security.web.DefaultSecurityFilterChain [main] Creating filter chain: Ant [pattern='/saml/metadata/**'], [org.springframework.security.saml.metadata.MetadataDisplayFilter@593b526b]
+2019-12-20 14:30:52,654 INFO org.springframework.security.web.DefaultSecurityFilterChain [main] Creating filter chain: Ant [pattern='/saml/login/**'], [esmo.test.ap.apms.SamlWithRelayStateEntryPoint@4ffe5488]
+2019-12-20 14:30:52,670 INFO org.springframework.security.web.DefaultSecurityFilterChain [main] Creating filter chain: Ant [pattern='/saml/SSO/**'], [org.springframework.security.saml.SAMLProcessingFilter@2c197d5d]
+2019-12-20 14:30:52,672 INFO org.springframework.security.web.DefaultSecurityFilterChain [main] Creating filter chain: Ant [pattern='/saml/logout/**'], [org.springframework.security.saml.SAMLLogoutFilter@33bbc451]
+2019-12-20 14:30:52,683 INFO org.springframework.security.web.DefaultSecurityFilterChain [main] Creating filter chain: Ant [pattern='/saml/SingleLogout/**'], [org.springframework.security.saml.SAMLLogoutProcessingFilter@20e23e7d]
+2019-12-20 14:30:53,096 INFO com.google.code.ssm.config.DefaultAddressProvider [main] Defined values 127.0.0.1:11211 will be used as memcached addresses
+2019-12-20 14:30:54,284 INFO org.springframework.scheduling.concurrent.ExecutorConfigurationSupport [main] Initializing ExecutorService 'applicationTaskExecutor'
+2019-12-20 14:30:55,582 INFO org.springframework.security.web.DefaultSecurityFilterChain [main] Creating filter chain: any request, [org.springframework.security.saml.metadata.MetadataGeneratorFilter@6402c9d8, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@6863a27e, org.springframework.security.web.context.SecurityContextPersistenceFilter@c464a3f, org.springframework.security.web.header.HeaderWriterFilter@380e473b, org.springframework.security.web.authentication.logout.LogoutFilter@5d647716, FilterChainProxy[Filter Chains: [[ Ant [pattern='/saml/metadata/**'], [org.springframework.security.saml.metadata.MetadataDisplayFilter@593b526b]], [ Ant [pattern='/saml/login/**'], [esmo.test.ap.apms.SamlWithRelayStateEntryPoint@4ffe5488]], [ Ant [pattern='/saml/SSO/**'], [org.springframework.security.saml.SAMLProcessingFilter@2c197d5d]], [ Ant [pattern='/saml/logout/**'], [org.springframework.security.saml.SAMLLogoutFilter@33bbc451]], [ Ant [pattern='/saml/SingleLogout/**'], [org.springframework.security.saml.SAMLLogoutProcessingFilter@20e23e7d]]]], org.springframework.security.web.savedrequest.RequestCacheAwareFilter@1b7aeb75, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@7bcdfe8a, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@76fec1ca, org.springframework.security.web.session.SessionManagementFilter@579a37d5, org.springframework.security.web.access.ExceptionTranslationFilter@4b230b1c, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@1415f1af]
+2019-12-20 14:30:56,349 INFO org.apache.juli.logging.DirectJDKLog [main] Starting ProtocolHandler ["https-jsse-nio-8443"]
+2019-12-20 14:30:58,201 INFO org.apache.juli.logging.DirectJDKLog [main] Starting ProtocolHandler ["http-nio-8080"]
+2019-12-20 14:30:58,412 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [main] Tomcat started on port(s): 8443 (https) 8080 (http) with context path ''
+2019-12-20 14:30:58,453 INFO org.springframework.boot.StartupInfoLogger [main] Started ApmsApplication in 16.395 seconds (JVM running for 25.206)
+2019-12-20 14:30:59,286 INFO org.apache.juli.logging.DirectJDKLog [http-nio-8080-exec-1] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2019-12-20 14:30:59,295 INFO org.springframework.web.servlet.FrameworkServlet [http-nio-8080-exec-1] Initializing Servlet 'dispatcherServlet'
+2019-12-20 14:30:59,349 INFO org.springframework.web.servlet.FrameworkServlet [http-nio-8080-exec-1] Completed initialization in 51 ms
+2019-12-20 14:30:59,456 INFO org.springframework.security.saml.metadata.MetadataGeneratorFilter [http-nio-8080-exec-1] No default metadata configured, generating with default values, please pre-configure metadata for production use
+2019-12-20 14:30:59,673 INFO org.springframework.security.saml.metadata.MetadataGeneratorFilter [http-nio-8080-exec-1] Created default metadata for system with entityID: esmoSamlClient
+2019-12-20 14:31:20,358 INFO esmo.test.ap.apms.controllers.SamlControllers [http-nio-8080-exec-3] SessionID b7215a49-2941-4b54-83fd-7117b09c710e
+2019-12-20 14:31:20,369 INFO esmo.test.ap.apms.controllers.SamlControllers [http-nio-8080-exec-3] Session: 
+2019-12-20 14:31:20,453 INFO esmo.test.ap.apms.controllers.SamlControllers [http-nio-8080-exec-3] Unexpected character ('i' (code 105)): was expecting double-quote to start field name
+ at [Source: (String)"{id=_394a55a94873c15144a62678dafed1573503f4a6ab, type=Request, issuer=https://clave.sir2.rediris.es/module.php/saml/sp/saml2-acs.php/q2891006e_ea0002678, recipient=null, inResponseTo=null, loa=null, notBefore=2019-12-17T11:50:54Z, notAfter=2020-12-15T11:55:54Z, status={code=null, subcode=null, message=null}, attributes=[{name=https://software.internet2.edu/eduperson/internet2-mace-dir-eduperson-201602.html#eduPersonTargetedID, friendlyName=eduPersonTargetedID, encoding=UTF-8, isMandatory=false, "[truncated 1575 chars]; line: 1, column: 3]
