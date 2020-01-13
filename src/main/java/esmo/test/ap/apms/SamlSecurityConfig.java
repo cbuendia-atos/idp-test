@@ -138,7 +138,7 @@ public class SamlSecurityConfig extends WebSecurityConfigurerAdapter {
     public WebSSOProfileOptions defaultWebSSOProfileOptions() {
         WebSSOProfileOptions webSSOProfileOptions = new WebSSOProfileOptions();
 
-        webSSOProfileOptions.setRelayState("https://mywebsite");
+        webSSOProfileOptions.setRelayState("https://mywebsite"); // ????
         webSSOProfileOptions.setIncludeScoping(false);
         return webSSOProfileOptions;
     }
@@ -182,6 +182,7 @@ public class SamlSecurityConfig extends WebSecurityConfigurerAdapter {
     public SAMLProcessingFilter samlWebSSOProcessingFilter() throws Exception {
         SAMLProcessingFilter samlWebSSOProcessingFilter = new SAMLProcessingFilter();
         samlWebSSOProcessingFilter.setAuthenticationManager(authenticationManager());
+        System.out.println(authenticationManager());
         samlWebSSOProcessingFilter.setAuthenticationSuccessHandler(successRedirectHandler());
         samlWebSSOProcessingFilter.setAuthenticationFailureHandler(authenticationFailureHandler());
         return samlWebSSOProcessingFilter;
@@ -293,7 +294,7 @@ public class SamlSecurityConfig extends WebSecurityConfigurerAdapter {
         return new ParserPoolHolder();
     }
 
-    //SAML Binding configuration, depends on the IDP specifications
+    //SAML Binding configurLation, depends on the IDP specifications
     @Bean
     public HTTPPostBinding httpPostBinding() {
         return new HTTPPostBinding(parserPool(), velocityEngine());
@@ -382,7 +383,7 @@ public class SamlSecurityConfig extends WebSecurityConfigurerAdapter {
 
         Timer backgroundTaskTimer = new Timer(true);
 //        HTTPMetadataProvider httpMetadataProvider = new HTTPMetadataProvider(backgroundTaskTimer, new HttpClient(), "http://localhost:8081/auth/realms/master/protocol/saml/descriptor");
-        HTTPMetadataProvider httpMetadataProvider = new HTTPMetadataProvider(backgroundTaskTimer, new HttpClient(), "https://idp.aegean.gr/idp/shibboleth");
+        HTTPMetadataProvider httpMetadataProvider = new HTTPMetadataProvider(backgroundTaskTimer, new HttpClient(), "http://idp.oktadev.com/metadata");
         httpMetadataProvider.setParserPool(parserPool());
 
         ExtendedMetadataDelegate extendedMetadataDelegate

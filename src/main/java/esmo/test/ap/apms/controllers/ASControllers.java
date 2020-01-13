@@ -81,39 +81,7 @@ public class ASControllers {
         this.netServ = new NetworkServiceImpl(httpSigServ);
     }
     
-    /**
-     * Pass a standard authn request object to be handled by an auth source ms
-     * @param msToken standard security token for microservice communication
-     * @param model
-     * @param redirectAttrs
-     * @throws KeyStoreException
-     */
-    
-    @RequestMapping(value = "/as/authenticate", method = {RequestMethod.POST, RequestMethod.GET})
-    public String authenticate(@RequestParam(value = "msToken", required = true) String msToken, Model model, RedirectAttributes redirectAttrs) throws KeyStoreException {
-    	String sessionMngrUrl = paramServ.getParam("SESSION_MANAGER_URL");
-    	List<NameValuePair> requestParams = new ArrayList<NameValuePair>();
-        requestParams.add(new NameValuePair("token", msToken));
-    	ObjectMapper mapper = new ObjectMapper();
-    	try {
-        	SessionMngrResponse resp = mapper.readValue(netServ.sendGet(sessionMngrUrl, "/sm/validateToken", requestParams, 1), SessionMngrResponse.class);
-        	if (resp.getCode().toString().equals("OK") && StringUtils.isEmpty(resp.getError())) {
-        		LOG.info("Response is ok");
-        		return "redirect:/authfail";
-        	}
-        	else {
-        		LOG.info("Response is not ok");
-        		return "redirect:/authfail";
-        	}
-        } catch (IOException ex) {
-            LOG.info(ex.getMessage());
-        } catch (NoSuchAlgorithmException ex) {
-            LOG.info(ex.getMessage());
-        }
-    	return "redirect:/authfail";
-    }
-    
-    /**
+    /*
      * Pass a standard authn request object to be handled by an auth source ms
      * @param msToken standard security token for microservice communication
      * @param model
@@ -121,8 +89,8 @@ public class ASControllers {
      * @throws KeyStoreException
      */
 
-    @RequestMapping(value = "/is/query", method = {RequestMethod.POST, RequestMethod.GET})
-    public String queryAp(@RequestParam(value = "msToken", required = true) String msToken, Model model, RedirectAttributes redirectAttrs) throws KeyStoreException {
+    @RequestMapping(value = "/as/authenticate", method = {RequestMethod.POST, RequestMethod.GET})
+    public String authenticate(@RequestParam(value = "msToken", required = true) String msToken, Model model, RedirectAttributes redirectAttrs) throws KeyStoreException {
         String sessionMngrUrl = paramServ.getParam("SESSION_MANAGER_URL");
         Cache memCache = this.cacheManager.getCache(MemCacheConfig.AP_SESSION);
         
@@ -135,7 +103,6 @@ public class ASControllers {
                 String esmoSessionId = resp.getSessionData().getSessionId();
                 String apMsSessionId = UUID.randomUUID().toString();
                 LOG.info("SessionID " + esmoSessionId);
-                //calls SM, “/sm/getSessionData” to get the session object that must contain the variables apRequest, apMetadata
                 requestParams.clear();
                 requestParams.add(new NameValuePair("sessionId", esmoSessionId));
                 
