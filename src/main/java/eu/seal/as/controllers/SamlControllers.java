@@ -76,6 +76,7 @@ public class SamlControllers {
     private final EsmoMetadataService metadataServ;
     private final KeyStoreService keyServ;
 
+    @Autowired
     public SamlControllers(ParameterService paramServ, KeyStoreService keyServ,
             EsmoMetadataService metadataServ) throws KeyStoreException, NoSuchAlgorithmException, UnrecoverableKeyException, UnsupportedEncodingException, InvalidKeySpecException, IOException {
         this.paramServ = paramServ;
@@ -89,76 +90,94 @@ public class SamlControllers {
 
     @RequestMapping(value = "/as/authenticate", method = {RequestMethod.POST, RequestMethod.GET})
     public String queryAp(@RequestParam(value = "msToken", required = false) String msToken, Model model, RedirectAttributes redirectAttrs) throws KeyStoreException {
-        String sessionMngrUrl = paramServ.getParam("SESSION_MANAGER_URL");
-        Cache memCache = this.cacheManager.getCache(MemCacheConfig.AP_SESSION);
+    	String sessionMngrUrl = System.getenv("SESSION_MANAGER_URL");
+    	
+    	List<NameValuePair> requestParams = new ArrayList<NameValuePair>();
+    	requestParams.add(new NameValuePair("token", msToken));
+    	ObjectMapper mapper = new ObjectMapper();
+    	LOG.info("\\n \n ****************************Lets try to call sm****************************************** \n \n");
+    	
+    	try {
+    		
+    		SessionMngrResponse resp = mapper.readValue(netServ.sendGet(sessionMngrUrl, "/sm/validateToken", requestParams, 1), SessionMngrResponse.class);
+    		LOG.info("Session manager!!" + resp);
+    	}  catch (NoSuchAlgorithmException e) {
+    		LOG.error(e.toString());
+    		return "redirect:/authfail";
+		} catch (IOException e) {
+			
+			e.printStackTrace();
+		} 
+    		
+    	return "redirect:/grap/saml/login";
         
-        String fileName = "mocks/sm_response_ap.json";
-        File file = new File(this.getClass().getClassLoader().getResource(fileName).getFile());
-        
-        List<NameValuePair> requestParams = new ArrayList<NameValuePair>();
-        requestParams.add(new NameValuePair("token", msToken));
-        ObjectMapper mapper = new ObjectMapper();
-        try {
-        	SessionMngrResponse resp = mapper.readValue(file, SessionMngrResponse.class);
-            if (resp.getCode().toString().equals("OK") && StringUtils.isEmpty(resp.getError())) {
-                String esmoSessionId = resp.getSessionData().getSessionId();
-                String apMsSessionId = UUID.randomUUID().toString();
-                LOG.info("SessionID " + esmoSessionId);
-                //calls SM, “/sm/getSessionData” to get the session object that must contain the variables apRequest, apMetadata
-                requestParams.clear();
-                requestParams.add(new NameValuePair("sessionId", esmoSessionId));
-                
-                //resp = mapper.readValue(netServ.sendGet(sessionMngrUrl, "/sm/getSessionData", requestParams, 1), SessionMngrResponse.class);
-                Gson gson = new Gson();
-                LinkedHashMap apRequest = (LinkedHashMap) resp.getSessionData().getSessionVariables().get("apRequest");
-                String jsonApRequest = gson.toJson(apRequest, LinkedHashMap.class);
-                
-                LOG.info("Session: \n" + apRequest + "\n");
-                LOG.info("Correct data + \n" + jsonApRequest);
-
-                if (apRequest == null) {
-                    LOG.error("no apRequest found in session " + esmoSessionId);
-                    model.addAttribute("error", "No AP request attributes found in the Session! Please restart the process");
-                    redirectAttrs.addFlashAttribute("errorMsg", "No AP request attributes found in the Session! Please restart the process");
-                    return "redirect:/authfail";
-                } else {
-
-                    EntityMetadata apMsMetadata = metadataServ.getMetadata();
-
-                    AttributeSet parsedApRequest = mapper.readValue(jsonApRequest, AttributeSet.class);
-                    List<AttributeType> matchingRequestedAttributes = 
-                    		Arrays.stream(parsedApRequest.getAttributes()).filter
-                    		(attribute -> 
-                    		{
-                    			return Arrays.asList(apMsMetadata.getClaims()).contains(attribute.getFriendlyName());
-                    		}).
-                    		collect(Collectors.toList());
-
-                    if (matchingRequestedAttributes.size() > 0) {
-                        return "redirect:/grap/saml/login?session=" + apMsSessionId;
-                    }
-                    LOG.error("Error, no supported attributes were found in the request");
-                    Arrays.stream(parsedApRequest.getAttributes()).forEach(attr -> {
-                        LOG.error(attr.getFriendlyName());
-                    });
-                    redirectAttrs.addFlashAttribute("errorMsg", "no supported attributes were found in the request");
-
-                }
-            } else {
-                model.addAttribute("error", "Error validating token! " + resp.getError());
-                LOG.error("something wring with the SM session!");
-                LOG.error(resp.getError());
-                LOG.error(resp.getCode().toString());
-                redirectAttrs.addFlashAttribute("errorMsg", "Error validating token! " + resp.getError());
-            }
-
-        } catch (IOException ex) {
-            LOG.info(ex.getMessage());
-        } 
-       //catch (NoSuchAlgorithmException ex) {
-       //     LOG.info(ex.getMessage());
-       // }
-        return "redirect:/authfail";
+//        String fileName = "mocks/sm_response_ap.json";
+//        File file = new File(this.getClass().getClassLoader().getResource(fileName).getFile());
+//        
+//        List<NameValuePair> requestParams = new ArrayList<NameValuePair>();
+//        requestParams.add(new NameValuePair("token", msToken));
+//        ObjectMapper mapper = new ObjectMapper();
+//        try {
+//        	SessionMngrResponse resp = mapper.readValue(file, SessionMngrResponse.class);
+//            if (resp.getCode().toString().equals("OK") && StringUtils.isEmpty(resp.getError())) {
+//                String esmoSessionId = resp.getSessionData().getSessionId();
+//                String apMsSessionId = UUID.randomUUID().toString();
+//                LOG.info("SessionID " + esmoSessionId);
+//                //calls SM, “/sm/getSessionData” to get the session object that must contain the variables apRequest, apMetadata
+//                requestParams.clear();
+//                requestParams.add(new NameValuePair("sessionId", esmoSessionId));
+//                
+//                //resp = mapper.readValue(netServ.sendGet(sessionMngrUrl, "/sm/getSessionData", requestParams, 1), SessionMngrResponse.class);
+//                Gson gson = new Gson();
+//                LinkedHashMap apRequest = (LinkedHashMap) resp.getSessionData().getSessionVariables().get("apRequest");
+//                String jsonApRequest = gson.toJson(apRequest, LinkedHashMap.class);
+//                
+//                LOG.info("Session: \n" + apRequest + "\n");
+//                LOG.info("Correct data + \n" + jsonApRequest);
+//
+//                if (apRequest == null) {
+//                    LOG.error("no apRequest found in session " + esmoSessionId);
+//                    model.addAttribute("error", "No AP request attributes found in the Session! Please restart the process");
+//                    redirectAttrs.addFlashAttribute("errorMsg", "No AP request attributes found in the Session! Please restart the process");
+//                    return "redirect:/authfail";
+//                } else {
+//
+//                    EntityMetadata apMsMetadata = metadataServ.getMetadata();
+//
+//                    AttributeSet parsedApRequest = mapper.readValue(jsonApRequest, AttributeSet.class);
+//                    List<AttributeType> matchingRequestedAttributes = 
+//                    		Arrays.stream(parsedApRequest.getAttributes()).filter
+//                    		(attribute -> 
+//                    		{
+//                    			return Arrays.asList(apMsMetadata.getClaims()).contains(attribute.getFriendlyName());
+//                    		}).
+//                    		collect(Collectors.toList());
+//
+//                    if (matchingRequestedAttributes.size() > 0) {
+//                        return "redirect:/grap/saml/login?session=" + apMsSessionId;
+//                    }
+//                    LOG.error("Error, no supported attributes were found in the request");
+//                    Arrays.stream(parsedApRequest.getAttributes()).forEach(attr -> {
+//                        LOG.error(attr.getFriendlyName());
+//                    });
+//                    redirectAttrs.addFlashAttribute("errorMsg", "no supported attributes were found in the request");
+//
+//                }
+//            } else {
+//                model.addAttribute("error", "Error validating token! " + resp.getError());
+//                LOG.error("something wring with the SM session!");
+//                LOG.error(resp.getError());
+//                LOG.error(resp.getCode().toString());
+//                redirectAttrs.addFlashAttribute("errorMsg", "Error validating token! " + resp.getError());
+//            }
+//
+//        } catch (IOException ex) {
+//            LOG.info(ex.getMessage());
+//        } 
+//       //catch (NoSuchAlgorithmException ex) {
+//       //     LOG.info(ex.getMessage());
+//       // }
+        //return "redirect:/authfail";
     }
 
     @RequestMapping("as/samlSuccess")

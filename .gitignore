@@ -24,6 +24,7 @@ HELP.md
 /nbdist/
 /.nb-gradle/
 /build/
+memcached-1.5.20
 ### VS Code ###
 .vscode/
 
