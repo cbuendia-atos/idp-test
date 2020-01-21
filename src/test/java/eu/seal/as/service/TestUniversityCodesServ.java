@@ -31,7 +31,7 @@ public class TestUniversityCodesServ {
     @Test
     public void test() {
         System.out.println("will test");
-        Mockito.when(this.paramServ.getParam("UNIVERSITIES_CONFIG_PATH")).thenReturn("/home/nikos/NetBeansProjects/ESMO-AP-TEST/src/test/resources/testKeys/university_codes.json");
+        Mockito.when(this.paramServ.getParam("UNIVERSITIES_CONFIG_PATH")).thenReturn("./testKeys/university_codes.json");
         UniversityDataService univServ = new UniversityDataServiceImpl(this.paramServ);
         Optional<UniversityData[]> rest = univServ.getCodes();
 

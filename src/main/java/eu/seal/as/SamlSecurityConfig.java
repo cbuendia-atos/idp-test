@@ -328,7 +328,7 @@ public class SamlSecurityConfig extends WebSecurityConfigurerAdapter {
     @Bean
     public static SAMLBootstrap sAMLBootstrap() {
 //        return new SAMLBootstrap(); // the default impl uses sha-1 which is now considered insecure
-        return new CustomSAMLBootstrap();
+        return new SAMLBootstrap();
     }
 
     //initialize saml logger
@@ -426,16 +426,16 @@ public class SamlSecurityConfig extends WebSecurityConfigurerAdapter {
         final SAMLContextProviderLB lb = new SAMLContextProviderLB();
 
         log.info("Setting the load balancer scheme to {}", "https");
-        lb.setScheme("https");
+        lb.setScheme("http");
 
         log.info("Setting the load balancer server name to {}", "serverName");
-        lb.setServerName("esmo-gateway.eu");
+        lb.setServerName("localhost:8080");
 
         log.info("Setting the load balancer context path to {}", "/grap");
-        lb.setContextPath("/grap");
+        lb.setContextPath("");
 
-        log.info("Setting the load balancer port to {}", 443);
-        lb.setServerPort(443);
+        log.info("Setting the load balancer port to {}", 80);
+        lb.setServerPort(80);
 
         log.info("Setting whether to include the server port in the request URL to {}", false);
         lb.setIncludeServerPortInRequestURL(false);

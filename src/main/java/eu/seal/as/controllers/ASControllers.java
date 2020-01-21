@@ -147,8 +147,8 @@ public class ASControllers {
 	 * @throws KeyStoreException
 	 */
 
-	@RequestMapping("as/samlSuccess")
-	public String samlSuccessResponseSession(@RequestParam(value = "session", required = true) String session,
+	@RequestMapping(value = "/as/samlSuccess", method = {RequestMethod.POST})
+	public String samlSuccessResponseSession(@RequestParam(value = "session", required = false) String session,
 			Authentication authentication, Model model, RedirectAttributes redirectAttrs) throws IOException, NoSuchAlgorithmException, KeyStoreException {
 		authentication.getDetails();
 		SAMLCredential credentials = (SAMLCredential) authentication.getCredentials();
@@ -156,7 +156,6 @@ public class ASControllers {
 				"schacHomeOrganization", "eduPersonTargetedID", "schGrAcPersonID",
 				"uid", "schacGender", "schacYearOfBirth", "schacDateOfBirth",
 				"schacCountryOfCitizenship", "schGrAcPersonSSN", "schacPersonalUniqueID",
-				"eduPersonOrgDN", "mail", "eduPersonAffiliation", "eduPersonAffiliation",
 				"eduPersonScopedAffiliation", "eduPersonPrimaryAffiliation", "givenName", "givenName_en",
 				"givenName_el", "sn", "sn_el", "sn_en", "cn_en", "cn_el", "displayName", "schacPersonalPosition",
 				"schacPersonalUniqueCode", "schGrAcEnrollment", "schGrAcInscription", "schGrAcPersonalLinkageID",
@@ -207,57 +206,6 @@ public class ASControllers {
 		// Create Datastore
 		
 		return "redirect:/authfail";
-
-//		AttributeType[] result = AttributeTypeFactory.makeFromSamlAttribute(returnedAttributes);
-//		AttributeSetStatus atrSetStatus = new AttributeSetStatus();
-//		Map< String, String> metadataProperties = new HashMap();
-//		atrSetStatus.setCode(AttributeSetStatus.CodeEnum.OK);
-//		AttributeSet attrSet = new AttributeSet("id", TypeEnum.Response, "APms001", "ACMms001", result, metadataProperties, sealSessionId, "low", null, null, atrSetStatus);
-//
-//		String attributSetString = attributSetString = mapper.writeValueAsString(attrSet);
-//		requestParams.clear();
-//		requestParams.add(new NameValuePair("dataObject", attributSetString));
-//		requestParams.add(new NameValuePair("variableName", "dsResponse"));
-//		requestParams.add(new NameValuePair("sessionId", sealSessionId));
-//		UpdateDataRequest updateReq = new UpdateDataRequest(sealSessionId, "dsResponse", attributSetString);
-//		resp = mapper.readValue(netServ.sendPostBody(sessionMngrUrl, "/sm/updateSessionData", updateReq, "application/json", 1), SessionMngrResponse.class);
-//
-//		if (!resp.getCode().toString().equals("OK")) {
-//			LOG.error("ERROR: " + resp.getError());
-//			redirectAttrs.addFlashAttribute("errorMsg", "Error communicating with the ESMO Network");
-//			return "redirect:/authfail";
-//		}
-//
-//		// store the ap metadata
-//		requestParams.clear();
-//		if (metadataServ != null && metadataServ.getMetadata() != null) {
-//			updateReq = new UpdateDataRequest(sealSessionId, "dsMetadata", mapper.writeValueAsString(metadataServ.getMetadata()));
-//			resp = mapper.readValue(netServ.sendPostBody(sessionMngrUrl, "/sm/updateSessionData", updateReq, "application/json", 1), SessionMngrResponse.class);
-//			if (!resp.getCode().toString().equals("OK")) {
-//				LOG.error("ERROR: " + resp.getError());
-//				redirectAttrs.addFlashAttribute("errorMsg", "Error communicating with the ESMO Network");
-//				return "redirect:/authfail";
-//			}
-//		}
-//
-//		//generate jwt and redirect to acm
-//		requestParams.clear();
-//		requestParams.add(new NameValuePair("sessionId", sealSessionId));
-//		requestParams.add(new NameValuePair("sender", paramServ.getParam("REDIRECT_JWT_SENDER"))); //[TODO] add correct sender "IdPms001"
-//		requestParams.add(new NameValuePair("receiver", paramServ.getParam("REDIRECT_JWT_RECEIVER"))); //"ACMms001"
-//		resp = mapper.readValue(netServ.sendGet(sessionMngrUrl, "/sm/generateToken", requestParams, 1), SessionMngrResponse.class);
-//		if (!resp.getCode().toString().equals("NEW")) {
-//			LOG.error("ERROR: " + resp.getError());
-//			redirectAttrs.addFlashAttribute("errorMsg", "Could not generate redirection token");
-//			return "redirect:/authfail";
-//		} else {
-//			String msToken = resp.getAdditionalData();
-//			//IdP calls, post  /acm/response
-//			String acmUrl = paramServ.getParam("ACM_URL");
-//			model.addAttribute("msToken", msToken);
-//			model.addAttribute("acmUrl", acmUrl + "/acm/response");
-//			return "acmRedirect";
-//		}
 	}
 
 }

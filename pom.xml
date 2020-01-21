@@ -25,7 +25,7 @@
     <groupId>seal.idp</groupId>
     <artifactId>seal-idp</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>ESMO-AP-GR</name>
+    <name>SEAL-IDP-EIDAS</name>
     <description>Demo project for Spring Boot</description>
 
     <properties>
@@ -107,6 +107,17 @@
 		</dependency>   
         
         <dependency>
+	        <groupId>xerces</groupId>
+	        <artifactId>xercesImpl</artifactId>
+	        <version>2.10.0</version>
+	    </dependency>
+	    <dependency>
+	        <groupId>xalan</groupId>
+	        <artifactId>xalan</artifactId>
+	        <version>2.7.1</version>
+	    </dependency>
+	        
+        <dependency>
             <groupId>gr.aegean.esmo</groupId>
             <artifactId>signatures</artifactId>
             <version>1.0</version>
@@ -135,11 +146,6 @@
 		    <artifactId>mockserver-netty</artifactId>
 		    <version>3.10.8</version>
 		</dependency>
-		<dependency>
-		    <groupId>org.mock-server</groupId>
-		    <artifactId>mockserver-client-java</artifactId>
-		    <version>3.10.8</version>
-		</dependency>
         
         <!-- https://mvnrepository.com/artifact/com.google.api-client/google-api-client -->
         <dependency>
@@ -161,13 +167,12 @@
         <dependency>
         <groupId>org.springframework.security.extensions</groupId>
         <artifactId>spring-security-saml2-core</artifactId>
-        <version>1.0.9.RELEASE</version>
+        <version>1.0.10.RELEASE</version>
             <type>jar</type>
         </dependency>
         <dependency>
             <groupId>org.springframework.security</groupId>
             <artifactId>spring-security-config</artifactId>
-            <version>5.1.4.RELEASE</version>
             <type>jar</type>
         </dependency>        
     </dependencies>

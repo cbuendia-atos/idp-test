@@ -40,6 +40,7 @@ import ch.qos.logback.core.ConsoleAppender;
 
 import static org.junit.Assert.assertThat;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.model;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.view;
@@ -74,9 +75,7 @@ public class AuthenticateControllerTest extends BaseTest {
 
     @Before
     public void setUp() throws UnrecoverableKeyException, KeyStoreException, NoSuchAlgorithmException, UnsupportedEncodingException, InvalidKeySpecException, IOException
-    {
-
-    	
+    {	
         MockitoAnnotations.initMocks(this);     
         asControllers = new ASControllers(paramServ, keyServ, metadataServ);
         mockMvc = standaloneSetup(asControllers)
@@ -84,13 +83,18 @@ public class AuthenticateControllerTest extends BaseTest {
                 .setSingleView(mockView).build();
     }
     
+//    @Test
+//    public void testAuthentication() throws Exception {
+//        mockMvc.perform(get("/as/authenticate"))
+//                .andExpect(status().isOk());
+//    }
+//    
     @Test
-    public void testAnonymousLanding() throws Exception {
-        mockMvc.perform(get("/as/authenticate"))
+    public void testCallBack() throws Exception {
+        mockMvc.perform(post("/as/samlSuccess"))
                 .andExpect(status().isOk());
     }
- 
-
+    
     private static class MockArgumentResolver implements HandlerMethodArgumentResolver
     {
         @Override
