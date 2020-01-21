@@ -58,7 +58,7 @@ import java.security.spec.InvalidKeySpecException;
 public class AuthenticateControllerTest extends BaseTest {
 	
     @InjectMocks
-    private SamlControllers samlControllers;
+    private ASControllers asControllers;
 
     @Mock
     private View mockView;
@@ -78,11 +78,12 @@ public class AuthenticateControllerTest extends BaseTest {
 
     	
         MockitoAnnotations.initMocks(this);     
-        samlControllers = new SamlControllers(paramServ, keyServ, metadataServ);
-        mockMvc = standaloneSetup(samlControllers)
+        asControllers = new ASControllers(paramServ, keyServ, metadataServ);
+        mockMvc = standaloneSetup(asControllers)
                 .setCustomArgumentResolvers(new MockArgumentResolver())
                 .setSingleView(mockView).build();
     }
+    
     @Test
     public void testAnonymousLanding() throws Exception {
         mockMvc.perform(get("/as/authenticate"))

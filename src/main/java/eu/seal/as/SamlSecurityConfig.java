@@ -169,7 +169,7 @@ public class SamlSecurityConfig extends WebSecurityConfigurerAdapter {
         SavedRequestAwareAuthenticationSuccessHandler successRedirectHandler = new SAMLRelayStateSuccessHandler();
 //        successRedirectHandler.setTargetUrlParameter("session");
 
-        successRedirectHandler.setDefaultTargetUrl("/grap/ap/samlSuccess");
+        successRedirectHandler.setDefaultTargetUrl("/as/samlSuccess");
 
         return successRedirectHandler;
     }
