@@ -132,7 +132,7 @@ public class ASControllers {
 		} catch (IOException e) {
 			e.printStackTrace();
 		} 
-		return "redirect:/grap/saml/login";
+		return "redirect:/saml/login";
 	}
 	
 	/**
